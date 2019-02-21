@@ -16,11 +16,11 @@ class MyWindow(QMainWindow):
         self.setupUI()
 
     def setupUI(self):
-        self.setGeometry(800, 400, 300, 150)
+        self.setGeometry(800, 400, 300, 200)
 
         # Label
-        label = QLabel("IP", self)
-        label.move(15, 20)
+        label = QLabel("파일 이름", self)
+        label.move(50, 20)
 
         '''
         self.progressBar = QProgressBar(self)
@@ -28,14 +28,14 @@ class MyWindow(QMainWindow):
         self.progressBar.setRange(0, 10)
         '''
 
-        btn1 = QPushButton("Click me", self)
-        btn1.move(180, 20)
+        btn1 = QPushButton("전송 시작", self)
+        btn1.move(150, 70)
         # btn1.clicked.connect(self.btn1_clicked)
         btn1.clicked.connect(self.getFileFromServer)
 
         # LineEdit
         self.lineEdit = QLineEdit("", self)
-        self.lineEdit.move(50, 20)
+        self.lineEdit.move(150, 20)
         self.lineEdit.returnPressed.connect(self.btn1_clicked)
 
         # StatusBar
