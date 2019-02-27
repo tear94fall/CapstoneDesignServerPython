@@ -1,6 +1,4 @@
-
-
-class fileSize:
+class FileSize:
     def __init__(self, file_size=None):
         self.file_size = file_size
 
@@ -30,7 +28,7 @@ class fileSize:
 
 
 if __name__ == "__main__":
-    file = fileSize()
+    file = FileSize()
 
     file_size = 1025
     file_size_list = file.file_size_calculate(file_size)

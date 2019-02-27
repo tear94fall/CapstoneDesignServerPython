@@ -7,6 +7,10 @@ from PyQt5.QtGui import *
 import socket
 import os
 
+from file_server.core.file_list import *
+
+from file_server.core.file_list import myListWidget
+
 
 class MyWindow(QMainWindow):
     HOST = ''
@@ -18,9 +22,21 @@ class MyWindow(QMainWindow):
         self.setup_ui()
 
     def setup_ui(self):
-        self.setGeometry(800, 400, 300, 180)
+        self.setGeometry(800, 400, 300, 350)
         self.setWindowTitle("파일 전송")
         self.setWindowIcon(QIcon("images.png"))
+
+        self.listWidget = QListWidget(self)
+        self.listWidget.setGeometry(20, 170, 260, 160)
+
+        '''
+        # 임시 파일 이름 가져오기 
+        FileList = FileListSearch("C:/")
+        file_list = FileList.search()
+
+        for i in file_list:
+            self.listWidget.addItem(i)
+        '''
 
         # Label
         label = QLabel("파일 이름", self)

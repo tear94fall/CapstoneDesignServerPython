@@ -1,7 +1,7 @@
 import socketserver
 from os.path import exists
 from file_server.core.logger import a_log, L_CRITICAL_EVENT, L_SPECIFIC
-from file_server.core.file_size import fileSize
+from file_server.core.file_size import FileSize
 
 
 class MyTcpHandler(socketserver.BaseRequestHandler):
@@ -25,11 +25,10 @@ class MyTcpHandler(socketserver.BaseRequestHandler):
             except Exception as e:
                 print(e)
 
-        file = fileSize()
+        file = FileSize()
         file_size_list = file.file_size_calculate(data_transferred)
 
         a_log('파일 이름 [%s] 전송완료, 전송량 [%s]' % (filename, str(file_size_list[0])+file_size_list[1]), L_CRITICAL_EVENT)
-
 
 
 class Server:
