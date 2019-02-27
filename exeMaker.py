@@ -6,4 +6,4 @@ setup(
 		version="1.0",
 		description = "client file",
 		author = "tear94fall",
-		executables = [Executable("Client.py")])
+		executables = [Executable("client/client.py")])
