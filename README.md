@@ -1,5 +1,15 @@
 PyFileTransfer
-=======
+=============
+
+* Client image
+
+![Alt text](./images/client.PNG)
+
+* Server image
+<img width="500" height="300" src="./images/server.PNG">
+</img>
+
+-------------
 * `Client.exe` - you can make client.exe like this
     
     $ python exeMaker.py build
