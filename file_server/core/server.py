@@ -13,6 +13,8 @@ class MyTcpHandler(socketserver.BaseRequestHandler):
         filename = filename.decode()  # 파일이름 이진 바이트 스트림 데이터를 일반 문자열로 변환
 
         if not exists(filename):  # 파일이 해당 디렉터리에 존재하지 않으면
+            a_log('[%s] 파일 없음' % filename, L_CRITICAL_EVENT)
+            a_log('클라이언트 [%s] 연결 해제' % self.client_address[0], L_CRITICAL_EVENT)
             return  # handle()함수를 빠져 나온다.
         a_log('파일 이름 [%s] 전송 시작...' % filename, L_CRITICAL_EVENT)
 
@@ -29,6 +31,7 @@ class MyTcpHandler(socketserver.BaseRequestHandler):
         file_size_list = file.file_size_calculate(data_transferred)
 
         a_log('파일 이름 [%s] 전송완료, 전송량 [%s]' % (filename, str(file_size_list[0])+file_size_list[1]), L_CRITICAL_EVENT)
+        a_log('클라이언트 [%s] 연결 해제' % self.client_address[0], L_CRITICAL_EVENT)
 
 
 class Server:
