@@ -1,6 +1,6 @@
-from server.core.server import *
-from server.logger import init_std_logger, init_f_logger
-from server.server_config import ArgsConfig
+from file_server.core.server import *
+from file_server.core.logger import init_std_logger, init_f_logger
+from file_server.core.server_config import ArgsConfig
 
 if __name__ == '__main__':
     description = "서버 작동"

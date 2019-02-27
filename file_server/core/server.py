@@ -1,6 +1,7 @@
 import socketserver
 from os.path import exists
-from server.logger import a_log, L_CRITICAL_EVENT, L_NORMAL, L_SPECIFIC
+from file_server.core.logger import a_log, L_CRITICAL_EVENT, L_SPECIFIC
+from file_server.core.file_size import fileSize
 
 
 class MyTcpHandler(socketserver.BaseRequestHandler):
@@ -11,11 +12,9 @@ class MyTcpHandler(socketserver.BaseRequestHandler):
         filename = self.request.recv(1024)  # 클라이언트로 부터 파일이름을 전달받음
         filename = filename.decode()  # 파일이름 이진 바이트 스트림 데이터를 일반 문자열로 변환
 
-        print(filename)
-
         if not exists(filename):  # 파일이 해당 디렉터리에 존재하지 않으면
             return  # handle()함수를 빠져 나온다.
-        a_log('파일[%s] 전송 시작...' % filename, L_CRITICAL_EVENT)
+        a_log('파일 이름 [%s] 전송 시작...' % filename, L_CRITICAL_EVENT)
 
         with open(filename, 'rb') as f:
             try:
@@ -26,7 +25,10 @@ class MyTcpHandler(socketserver.BaseRequestHandler):
             except Exception as e:
                 print(e)
 
-        a_log('전송완료[%s], 전송량[%d]' % (filename, data_transferred), L_CRITICAL_EVENT)
+        file = fileSize()
+        file_size_list = file.file_size_calculate(data_transferred)
+
+        a_log('파일 이름 [%s] 전송완료, 전송량 [%s]' % (filename, str(file_size_list[0])+file_size_list[1]), L_CRITICAL_EVENT)
 
 
 

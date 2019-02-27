@@ -66,7 +66,7 @@ class FileLogger(StdLogger):
     def __init__(self, verbose_level: int, buffer_len: int):
         super().__init__(verbose_level)
         super().silent(True)
-        self.logfile = 'sonoum_server.log'
+        self.logfile = 'file_server.log'
         self.log_queue = list()
         self.buffer_len = buffer_len
 

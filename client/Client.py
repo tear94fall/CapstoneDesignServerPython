@@ -5,6 +5,7 @@ from PyQt5.QtWidgets import QCompleter
 from PyQt5 import QtGui, QtCore
 from PyQt5.QtGui import *
 import socket
+import os
 
 
 class MyWindow(QMainWindow):
@@ -85,6 +86,10 @@ class MyWindow(QMainWindow):
             if not data:
                 QMessageBox.about(self, "실패", '파일[%s]: 서버에 존재하지 않거나 전송중 오류발생' % self.filename)
                 return None
+
+            target_directory = 'download'
+            if not os.path.isdir(target_directory):
+                os.mkdir(target_directory)
 
             with open('download/' + self.filename, 'wb') as f:
                 try:
