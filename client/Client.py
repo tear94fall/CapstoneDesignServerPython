@@ -7,15 +7,16 @@ from PyQt5.QtGui import *
 import socket
 import os
 
-from file_server.core.file_list import *
+# from file_server.core.file_list import *
 
-from file_server.core.file_list import myListWidget
+# from file_server.core.file_list import myListWidget
 
 
 class MyWindow(QMainWindow):
     HOST = ''
     PORT = 9009
     filename = ""
+    filelist = []
 
     def __init__(self):
         super().__init__()
@@ -62,9 +63,12 @@ class MyWindow(QMainWindow):
 
         ip_addr_btn = QPushButton("IP 설정", self)
         ip_addr_btn.move(20, 120)
-        ip_addr_btn.clicked.connect(self.get_ip_addr)
+        ip_addr_btn.clicked.connect(self.get_file_list)
 
-    def get_ip_addr(self):
+    def get_file_list(self):
+        ####
+        ####
+
         self.HOST = self.ip_addr_line_edit.text()
         QMessageBox.about(self, "Okay", 'IP 주소 설정 완료')
 
