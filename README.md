@@ -6,7 +6,7 @@ PyFileTransfer
 ![Alt text](./images/client.PNG)
 
 * Server image
-<img width="500" height="300" src="./images/server.PNG">
+<img width="650" height="230" src="./images/server.PNG">
 </img>
 
 -------------
