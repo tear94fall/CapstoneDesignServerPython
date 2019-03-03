@@ -15,12 +15,12 @@ async def tcp_echo_client(message, loop):
 
 
 # 비동기 함수를 반복 수행하는 함수
-async def main():
+async def start_transfer():
+    message = str(input("내용을 입력하시오."))
     while True:
-        # message = input("what is this?")
         await tcp_echo_client(message, loop)
 
 
-message = '111111111111111111111'
+message = 'abcdefghijklmnopqrstuvwxyz'
 loop = asyncio.get_event_loop()
-loop.run_until_complete(main())
+loop.run_until_complete(start_transfer())
