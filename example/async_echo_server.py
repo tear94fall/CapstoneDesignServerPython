@@ -23,9 +23,9 @@ class Server:
         self.port = port
         self.address = address
         self.server = None
-        self.opened = False
         self.event_loop = asyncio.get_event_loop()
         self.client_addr = ''
+        self.is_server_on = False
         a_log('서버 설정 완료', L_SPECIFIC)
 
     def start(self):
@@ -34,14 +34,15 @@ class Server:
         addr = server.sockets[0].getsockname()
         a_log('서버 서비스 시작 중 %s ' % str(addr), L_CRITICAL_EVENT)
         self.event_loop.run_forever()
+        self.server_on = True
 
     async def stop(self):
         a_log('서버 종료 중', L_CRITICAL_EVENT)
-        if not self.opened:
+        if not self.is_server_on:
             a_log('서버가 이미 종료 되었습니다.', L_CRITICAL_EVENT)
             raise RuntimeError('server already stopped.')
         self.server.close()
-        self.opened = False
+        self.is_server_on = False
         a_log('서버 종료 완료', L_CRITICAL_EVENT)
         await self.server.wait_closed()
 
