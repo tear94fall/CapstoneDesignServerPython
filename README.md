@@ -3,7 +3,7 @@ PyFileTransfer
 
 * Client image
 
-![Alt text](./images/client.PNG)
+![Alt text](./images/mac_client.PNG)
 
 * Server image
 <img width="650" height="230" src="./images/server.PNG">
