@@ -1,7 +1,7 @@
 
 
 '''
- @ File : async_echo_server.py
+ @ File : async_server.py
  @ Name : lim joonsub
  @ Date : 2019.03.04
  @ Brief : server class declaration
@@ -10,9 +10,8 @@
 
 
 import asyncio
-import ipaddress
 from asyncio import StreamReader, StreamWriter
-from file_server.core.logger import a_log, L_CRITICAL_EVENT, L_NORMAL, L_SPECIFIC
+from server.logger import a_log, L_CRITICAL_EVENT, L_SPECIFIC
 
 BUFFER_SIZE = 512
 
@@ -50,7 +49,6 @@ class Server:
         # =============================================== #
         # 데이터를 연속적으로 받을 거면 루프에 넣어주고
         # 연속적인 전송이 필요없으면 밖으로 빼줄것
-
         # while True:
         data = await reader.read(BUFFER_SIZE)
         message = data.decode()
