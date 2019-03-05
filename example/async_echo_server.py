@@ -34,7 +34,7 @@ class Server:
         addr = server.sockets[0].getsockname()
         a_log('서버 서비스 시작 중 %s ' % str(addr), L_CRITICAL_EVENT)
         self.event_loop.run_forever()
-        self.server_on = True
+        self.is_server_on = True
 
     async def stop(self):
         a_log('서버 종료 중', L_CRITICAL_EVENT)
@@ -47,6 +47,11 @@ class Server:
         await self.server.wait_closed()
 
     async def io_handle(self, reader: StreamReader, writer: StreamWriter):
+        # =============================================== #
+        # 데이터를 연속적으로 받을 거면 루프에 넣어주고
+        # 연속적인 전송이 필요없으면 밖으로 빼줄것
+
+        # while True:
         data = await reader.read(BUFFER_SIZE)
         message = data.decode()
 
@@ -56,5 +61,7 @@ class Server:
         # 데이터를 보냄
         writer.write(data)
         await writer.drain()
+
+        # 소켓 종료
         a_log('소켓 종료', L_CRITICAL_EVENT)
         writer.close()

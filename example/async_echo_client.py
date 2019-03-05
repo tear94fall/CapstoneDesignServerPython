@@ -17,10 +17,9 @@ async def tcp_echo_client(message, loop):
 # 비동기 함수를 반복 수행하는 함수
 async def main():
     while True:
-        # message = input("what is this?")
+        message = str(input())
+        message += "\x04"
         await tcp_echo_client(message, loop)
 
-
-message = '111111111111111111111'
 loop = asyncio.get_event_loop()
 loop.run_until_complete(main())
