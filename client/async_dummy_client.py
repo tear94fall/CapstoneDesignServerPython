@@ -2,7 +2,7 @@ import asyncio
 
 
 async def tcp_echo_client(message, loop):
-    reader, writer = await asyncio.open_connection('192.168.0.54', 8888, loop=loop)
+    reader, writer = await asyncio.open_connection('localhost', 8888, loop=loop)
 
     print('데이터를 보냄 : %s ' % message)
     writer.write(message.encode())

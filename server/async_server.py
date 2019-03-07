@@ -11,7 +11,8 @@
 
 import asyncio
 from asyncio import StreamReader, StreamWriter
-from server.logger import a_log, L_CRITICAL_EVENT, L_SPECIFIC
+from server.server_logger import a_log, L_CRITICAL_EVENT, L_SPECIFIC, L_NORMAL
+from server.request_handler import *
 
 BUFFER_SIZE = 512
 
@@ -46,15 +47,22 @@ class Server:
         await self.server.wait_closed()
 
     async def io_handle(self, reader: StreamReader, writer: StreamWriter):
-        # =============================================== #
-        # 데이터를 연속적으로 받을 거면 루프에 넣어주고
-        # 연속적인 전송이 필요없으면 밖으로 빼줄것
-        # while True:
+        client_ip_addr = writer.get_extra_info('peername')
+
+        a_log('클라이언트 {0}의 요청 처리 시작'.format(client_ip_addr), L_NORMAL)
+
+        result = await request_handler(1, client_ip_addr)
+        result.main()
+
+'''
+        # request_handler 연동 테스트 코드
+        result = await request_handler(1, client_ip_addr)
+        result.main()
+        # =====================
+
         data = await reader.read(BUFFER_SIZE)
         message = data.decode()
-
-        addr = writer.get_extra_info('peername')
-        a_log('데이터를 받아옴 : %s ' % message, L_CRITICAL_EVENT)
+        a_log('클라이언트 %r 로부터 데이터를 받아옴 : %s ' % (client_ip_addr, message), L_CRITICAL_EVENT)
 
         # 데이터를 보냄
         writer.write(data)
@@ -63,3 +71,4 @@ class Server:
         # 소켓 종료
         a_log('소켓 종료', L_CRITICAL_EVENT)
         writer.close()
+'''
