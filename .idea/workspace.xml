@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5490af6c-48a8-4c49-8a75-29386717e238" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/client/gui_client.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/async_file_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/async_file_server.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/async_ftp_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/async_ftp_client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/async_dummy_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/async_dummy_client.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/async_server_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/server/async_server_log.log" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -13,35 +14,66 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/PyFileTransfer$file_list.coverage" NAME="file_list Coverage Results" MODIFIED="1551453346866" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/file_server/core" />
-    <SUITE FILE_PATH="coverage/PyFileTransfer$Client.coverage" NAME="Client Coverage Results" MODIFIED="1551799807982" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/client" />
-    <SUITE FILE_PATH="coverage/PyFileTransfer$async_ftp_client.coverage" NAME="async_ftp_client Coverage Results" MODIFIED="1551803731296" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
-    <SUITE FILE_PATH="coverage/PyFileTransfer$async_echo_server.coverage" NAME="async_echo_server Coverage Results" MODIFIED="1551630978814" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/file_server" />
-    <SUITE FILE_PATH="coverage/PyFileTransfer$dummy_client.coverage" NAME="dummy_client Coverage Results" MODIFIED="1551635920222" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/example" />
-    <SUITE FILE_PATH="coverage/PyFileTransfer$async_echo_server_main.coverage" NAME="async_echo_server_main Coverage Results" MODIFIED="1551799210117" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/example" />
-    <SUITE FILE_PATH="coverage/PyFileTransfer$main.coverage" NAME="main Coverage Results" MODIFIED="1551799806278" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/file_server" />
-    <SUITE FILE_PATH="coverage/PyFileTransfer$exeMaker.coverage" NAME="exeMaker Coverage Results" MODIFIED="1550414954114" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/PyFileTransfer$test.coverage" NAME="test Coverage Results" MODIFIED="1550498218403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/PyFileTransfer$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1551285791701" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/file_server" />
-    <SUITE FILE_PATH="coverage/PyFileTransfer$async_echo_client.coverage" NAME="async_echo_client Coverage Results" MODIFIED="1551784581691" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/file_server" />
-    <SUITE FILE_PATH="coverage/PyFileTransfer$async_file_server.coverage" NAME="async_file_server Coverage Results" MODIFIED="1551804175130" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
-    <SUITE FILE_PATH="coverage/PyFileTransfer$server.coverage" NAME="server Coverage Results" MODIFIED="1551285574161" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server/core" />
-    <SUITE FILE_PATH="coverage/PyFileTransfer$async_dummy_client.coverage" NAME="async_dummy_client Coverage Results" MODIFIED="1551800872525" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/client" />
-    <SUITE FILE_PATH="coverage/PyFileTransfer$abc.coverage" NAME="abc Coverage Results" MODIFIED="1550754361538" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/PyFileTransfer$testServer.coverage" NAME="testServer Coverage Results" MODIFIED="1551633085233" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/example" />
+    <SUITE FILE_PATH="coverage/PyFileTransfer$async_echo_server.coverage" NAME="async_echo_server Coverage Results" MODIFIED="1551630978814" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/file_server" />
     <SUITE FILE_PATH="coverage/PyFileTransfer$file_size.coverage" NAME="file_size Coverage Results" MODIFIED="1551285439235" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
-    <SUITE FILE_PATH="coverage/PyFileTransfer$async_server_main.coverage" NAME="async_server_main Coverage Results" MODIFIED="1551800836368" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
+    <SUITE FILE_PATH="coverage/PyFileTransfer$dummy_client.coverage" NAME="dummy_client Coverage Results" MODIFIED="1551635920222" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/example" />
+    <SUITE FILE_PATH="coverage/PyFileTransfer$async_file_transfer_server.coverage" NAME="async_file_transfer_server Coverage Results" MODIFIED="1551923540029" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/example" />
+    <SUITE FILE_PATH="coverage/PyFileTransfer$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1551285791701" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/file_server" />
+    <SUITE FILE_PATH="coverage/PyFileTransfer$async_server_main.coverage" NAME="async_server_main Coverage Results" MODIFIED="1551924533502" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
+    <SUITE FILE_PATH="coverage/PyFileTransfer$async_file_transfer_client.coverage" NAME="async_file_transfer_client Coverage Results" MODIFIED="1551923541791" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/example" />
+    <SUITE FILE_PATH="coverage/PyFileTransfer$main.coverage" NAME="main Coverage Results" MODIFIED="1551799806278" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/file_server" />
+    <SUITE FILE_PATH="coverage/PyFileTransfer$server.coverage" NAME="server Coverage Results" MODIFIED="1551285574161" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server/core" />
+    <SUITE FILE_PATH="coverage/PyFileTransfer$file_list.coverage" NAME="file_list Coverage Results" MODIFIED="1551453346866" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/file_server/core" />
+    <SUITE FILE_PATH="coverage/PyFileTransfer$gui_client.coverage" NAME="gui_client Coverage Results" MODIFIED="1551978465784" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/client" />
+    <SUITE FILE_PATH="coverage/PyFileTransfer$Client.coverage" NAME="Client Coverage Results" MODIFIED="1551799807982" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/client" />
+    <SUITE FILE_PATH="coverage/PyFileTransfer$test.coverage" NAME="test Coverage Results" MODIFIED="1550498218403" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PyFileTransfer$async_echo_server_main.coverage" NAME="async_echo_server_main Coverage Results" MODIFIED="1551799210117" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/example" />
+    <SUITE FILE_PATH="coverage/PyFileTransfer$async_echo_client.coverage" NAME="async_echo_client Coverage Results" MODIFIED="1551784581691" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/file_server" />
+    <SUITE FILE_PATH="coverage/PyFileTransfer$exeMaker.coverage" NAME="exeMaker Coverage Results" MODIFIED="1550414954114" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PyFileTransfer$async_dummy_client.coverage" NAME="async_dummy_client Coverage Results" MODIFIED="1551974125238" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/client" />
+    <SUITE FILE_PATH="coverage/PyFileTransfer$abc.coverage" NAME="abc Coverage Results" MODIFIED="1550754361538" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/async_file_server.py">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/async_dummy_client.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+            <state relative-caret-position="285">
+              <caret line="19" column="42" lean-forward="true" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/example/async_file_transfer_server.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
               <folding>
                 <element signature="e#0#14#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/example/async_file_transfer_client.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/gui_client.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -94,23 +126,26 @@
         <option value="$PROJECT_DIR$/example/async_server.py" />
         <option value="$PROJECT_DIR$/example/async_server_main.py" />
         <option value="$PROJECT_DIR$/example/logger.py" />
-        <option value="$PROJECT_DIR$/server/async_ftp_client.py" />
-        <option value="$PROJECT_DIR$/server/async_file_server.py" />
+        <option value="$PROJECT_DIR$/example/async_file_transfer_client.py" />
+        <option value="$PROJECT_DIR$/server/async_server.py" />
+        <option value="$PROJECT_DIR$/server/async_server_log.log" />
+        <option value="$PROJECT_DIR$/example/async_file_transfer_server.py" />
+        <option value="$PROJECT_DIR$/client/async_dummy_client.py" />
+        <option value="$PROJECT_DIR$/client/gui_client.py" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="41" />
-    <option name="y" value="42" />
-    <option name="width" value="1445" />
-    <option name="height" value="929" />
+    <option name="x" value="140" />
+    <option name="y" value="115" />
+    <option name="width" value="1588" />
+    <option name="height" value="1088" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -126,25 +161,28 @@
             <path>
               <item name="PyFileTransfer" type="b2602c69:ProjectViewProjectNode" />
               <item name="PyFileTransfer" type="462c0819:PsiDirectoryNode" />
+              <item name="example" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="PyFileTransfer" type="b2602c69:ProjectViewProjectNode" />
+              <item name="PyFileTransfer" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/sonoum_auth_server" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\tear9\PycharmProjects\PyFileTransfer\server" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\tear9\PycharmProjects\PyFileTransfer\client" />
       <recent name="C:\Users\tear9\PycharmProjects\PyFileTransfer\example" />
@@ -165,7 +203,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.async_file_server">
+  <component name="RunManager" selected="Python.gui_client">
     <configuration name="async_dummy_client" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PyFileTransfer" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -188,7 +226,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="async_file_server" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="async_file_transfer_client" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PyFileTransfer" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -196,12 +234,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/server" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/example" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/server/async_file_server.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/example/async_file_transfer_client.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -210,7 +248,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="async_ftp_client" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="async_file_transfer_server" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PyFileTransfer" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -218,12 +256,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/server" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/example" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/server/async_ftp_client.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/example/async_file_transfer_server.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -254,18 +292,42 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="gui_client" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="PyFileTransfer" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/client" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/client/gui_client.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="Python.async_server_main" />
       <item itemvalue="Python.async_dummy_client" />
-      <item itemvalue="Python.async_file_server" />
-      <item itemvalue="Python.async_ftp_client" />
+      <item itemvalue="Python.async_file_transfer_server" />
+      <item itemvalue="Python.async_file_transfer_client" />
+      <item itemvalue="Python.gui_client" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.async_file_server" />
-        <item itemvalue="Python.async_ftp_client" />
+        <item itemvalue="Python.gui_client" />
         <item itemvalue="Python.async_dummy_client" />
         <item itemvalue="Python.async_server_main" />
+        <item itemvalue="Python.async_file_transfer_client" />
+        <item itemvalue="Python.async_file_transfer_server" />
       </list>
     </recent_temporary>
   </component>
@@ -295,7 +357,12 @@
       <workItem from="1551721818499" duration="133000" />
       <workItem from="1551771180555" duration="6707000" />
       <workItem from="1551790768022" duration="3606000" />
-      <workItem from="1551800271674" duration="3455000" />
+      <workItem from="1551800271674" duration="569000" />
+      <workItem from="1551874842809" duration="563000" />
+      <workItem from="1551889967785" duration="128000" />
+      <workItem from="1551920581799" duration="4429000" />
+      <workItem from="1551959912231" duration="98000" />
+      <workItem from="1551968377353" duration="5067000" />
     </task>
     <task id="LOCAL-00001" summary="1.server(cmd)&#10;2.client(gui)">
       <created>1550409876118</created>
@@ -381,25 +448,32 @@
       <option name="project" value="LOCAL" />
       <updated>1551785169274</updated>
     </task>
-    <task id="LOCAL-00013" summary="1.server file create and server files clean up&#10;2.client file clean up">
-      <created>1551800984400</created>
+    <task id="LOCAL-00013" summary="1.Empty data send error modified">
+      <created>1551924634555</created>
       <option name="number" value="00013" />
       <option name="presentableId" value="LOCAL-00013" />
       <option name="project" value="LOCAL" />
-      <updated>1551800984400</updated>
+      <updated>1551924634555</updated>
     </task>
-    <task id="LOCAL-00014" summary="server log file add to the repository">
-      <created>1551801043390</created>
+    <task id="LOCAL-00014" summary="1.try ~ except function add">
+      <created>1551924659702</created>
       <option name="number" value="00014" />
       <option name="presentableId" value="LOCAL-00014" />
       <option name="project" value="LOCAL" />
-      <updated>1551801043390</updated>
+      <updated>1551924659702</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="1.file size_check logic modified">
+      <created>1551924793430</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1551924793430</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46413000" />
+    <option name="totallyTimeSpent" value="53812000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -411,30 +485,30 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="34" y="35" width="1156" height="742" extended-state="0" />
+    <frame x="140" y="115" width="1588" height="1088" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49878934" visible="true" weight="0.2591241" />
-      <window_info id="Structure" order="1" sideWeight="0.50121063" side_tool="true" weight="0.2591241" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.23803364" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="0" weight="0.32976654" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32907802" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49731544" weight="0.3218391" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.39737275" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.49731544" visible="true" weight="0.30220884" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.39774558" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="7" weight="0.32907802" />
+      <window_info anchor="bottom" id="TODO" order="7" weight="0.32826748" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32907802" />
+      <window_info anchor="bottom" id="Version Control" order="9" sideWeight="0.49807444" weight="0.32730925" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5026846" side_tool="true" weight="0.27801418" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5019255" side_tool="true" weight="0.32826748" />
       <window_info anchor="bottom" id="Terminal" order="12" weight="0.32765958" />
-      <window_info anchor="bottom" id="Python Console" order="13" weight="0.32907802" />
+      <window_info anchor="bottom" id="Python Console" order="13" weight="0.32831326" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="SciView" order="3" weight="0.329849" />
       <window_info anchor="right" id="Database" order="4" />
     </layout>
   </component>
@@ -454,24 +528,13 @@
     <MESSAGE value="1.using python 3.6.5 =&gt; 3.7 (stablization need)&#10;2.environment add (max os 10.14 mojave)" />
     <MESSAGE value="1.example directory add&#10;2.async server class add" />
     <MESSAGE value="1.server socket loop logic modified" />
-    <MESSAGE value="1.server file create and server files clean up&#10;2.client file clean up" />
-    <MESSAGE value="server log file add to the repository" />
-    <option name="LAST_COMMIT_MESSAGE" value="server log file add to the repository" />
+    <MESSAGE value="1.Empty data send error modified" />
+    <MESSAGE value="1.try ~ except function add" />
+    <MESSAGE value="1.file size_check logic modified" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.file size_check logic modified" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/server/async_ftp_client.py</url>
-          <line>27</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/server/async_ftp_client.py</url>
-          <line>18</line>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-      </breakpoints>
       <default-breakpoints>
         <breakpoint type="python-exception">
           <properties notifyOnTerminate="true" exception="BaseException">
@@ -509,9 +572,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/file_server/file_server.log">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/file_server/file_server.log" />
     <entry file="file://$PROJECT_DIR$/server/file_size.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="330">
@@ -526,26 +587,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/genericpath.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="21" selection-start-line="21" selection-end-line="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/asyncio/events.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="100" selection-start-line="100" selection-end-line="100" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/asyncio/base_events.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="522" selection-start-line="522" selection-end-line="522" />
-        </state>
-      </provider>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/genericpath.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/asyncio/events.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/asyncio/base_events.py" />
+    <entry file="file://$PROJECT_DIR$/server/async_ftp_client.py">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/server/server_config.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -557,21 +603,7 @@
     <entry file="file://$PROJECT_DIR$/client/images.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/dummy_client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="38" selection-start-line="18" selection-start-column="38" selection-end-line="18" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/file_server.log">
-      <provider editor-type-id="LargeFileEditor">
-        <state>
-          <caret column="33" lean-forward="true" selection-start-column="33" selection-end-column="33" />
-        </state>
-      </provider>
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/example/dummy_client.py" />
     <entry file="file://$PROJECT_DIR$/server/logger.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="143">
@@ -579,13 +611,6 @@
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/async_dummy_client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="30" selection-start-line="18" selection-start-column="15" selection-end-line="19" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -597,13 +622,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/file_server/main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="9" column="54" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/file_server/main.py" />
     <entry file="file://$PROJECT_DIR$/exeMaker.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -611,57 +630,81 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/Client.py">
+    <entry file="file://$PROJECT_DIR$/client/Client.py" />
+    <entry file="file://$PROJECT_DIR$/server/server.py" />
+    <entry file="file://$PROJECT_DIR$/server/async_file_server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="15" selection-start-line="16" selection-start-column="15" selection-end-line="16" selection-end-column="15" />
+        <state relative-caret-position="165">
+          <caret line="12" column="51" selection-start-line="12" selection-start-column="51" selection-end-line="12" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/asyncio/selector_events.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="849" selection-start-line="849" selection-end-line="849" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/file_server.log" />
+    <entry file="file://$PROJECT_DIR$/server/async_server_log.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="45" lean-forward="true" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/async_server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="470">
+          <caret line="56" column="40" selection-start-line="56" selection-start-column="14" selection-end-line="56" selection-end-column="40" />
           <folding>
-            <element signature="e#0#10#0" expanded="true" />
+            <element signature="e#130#144#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/async_server_log.log">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/async_server_main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="60" lean-forward="true" selection-start-line="21" selection-start-column="60" selection-end-line="21" selection-end-column="60" />
+        <state relative-caret-position="150">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
           <folding>
             <element signature="e#120#153#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/async_ftp_client.py">
+    <entry file="file://$PROJECT_DIR$/client/async_dummy_client.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="14" selection-end-line="40" selection-end-column="12" />
+        <state relative-caret-position="285">
+          <caret line="19" column="42" lean-forward="true" selection-start-line="19" selection-start-column="42" selection-end-line="19" selection-end-column="42" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/async_server.py">
+    <entry file="file://$PROJECT_DIR$/example/async_file_transfer_server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-640">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/async_file_server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="32" lean-forward="true" selection-start-line="32" selection-end-line="32" />
+        <state relative-caret-position="330">
+          <caret line="24" lean-forward="true" selection-start-line="24" selection-end-line="24" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/async_file_transfer_client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/gui_client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
         </state>
       </provider>
     </entry>
