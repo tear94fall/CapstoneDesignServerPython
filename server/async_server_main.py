@@ -10,7 +10,7 @@
 
 
 from server.async_server import *
-from server.logger import init_std_logger, init_f_logger
+from server.server_logger import init_std_logger, init_f_logger
 from server.server_config import ArgsConfig
 
 if __name__ == '__main__':
