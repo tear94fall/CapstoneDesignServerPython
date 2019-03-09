@@ -15,6 +15,8 @@ from server.server_logger import a_log, L_CRITICAL_EVENT, L_SPECIFIC, L_NORMAL
 from server.request_handler import *
 
 BUFFER_SIZE = 512
+SERVER_IO_BUFFER_SIZE = 512
+
 
 
 class Server:
@@ -51,16 +53,21 @@ class Server:
 
         a_log('클라이언트 {0}의 요청 처리 시작'.format(client_ip_addr), L_NORMAL)
 
-        result = await request_handler(1, client_ip_addr)
-        result.main()
+        data = None
 
-'''
-        # request_handler 연동 테스트 코드
-        result = await request_handler(1, client_ip_addr)
-        result.main()
-        # =====================
+        try:
+            data = await reader.read(SERVER_IO_BUFFER_SIZE)
+        except ConnectionError as connection_err:
+            # a_log('트랜잭션 처리 실패. 연결 에러. {0}, 요청 클라이언트 {1}'.format(connection_err, remote_peer_info), L_NORMAL)
+            print("트랜잭션 처리 실패. 연걸 에러")
+            writer.close()
 
-        data = await reader.read(BUFFER_SIZE)
+        if not len(data) > 0:
+            # a_log('트랜잭션 처리 종료. 잘못 된 요청. 요청 클라이언트 {0}'.format(remote_peer_info), L_NORMAL)
+            print("데이터 없음")
+            writer.close()
+            return
+
         message = data.decode()
         a_log('클라이언트 %r 로부터 데이터를 받아옴 : %s ' % (client_ip_addr, message), L_CRITICAL_EVENT)
 
@@ -71,4 +78,3 @@ class Server:
         # 소켓 종료
         a_log('소켓 종료', L_CRITICAL_EVENT)
         writer.close()
-'''

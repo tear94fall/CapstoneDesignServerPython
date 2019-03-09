@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5490af6c-48a8-4c49-8a75-29386717e238" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/server/request_handler.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/async_dummy_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/async_dummy_client.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/async_file_server.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/async_ftp_client.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/server/async_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/async_server.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/async_server_log.log" beforeDir="false" afterPath="$PROJECT_DIR$/server/async_server_log.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/async_server_main.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/async_server_main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/logger.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/server_logger.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/request_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/request_handler.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,19 +29,19 @@
     <SUITE FILE_PATH="coverage/PyFileTransfer$async_echo_client.coverage" NAME="async_echo_client Coverage Results" MODIFIED="1551784581691" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/file_server" />
     <SUITE FILE_PATH="coverage/PyFileTransfer$async_file_server.coverage" NAME="async_file_server Coverage Results" MODIFIED="1551875402549" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
     <SUITE FILE_PATH="coverage/PyFileTransfer$server.coverage" NAME="server Coverage Results" MODIFIED="1551285574161" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server/core" />
-    <SUITE FILE_PATH="coverage/PyFileTransfer$async_dummy_client.coverage" NAME="async_dummy_client Coverage Results" MODIFIED="1551968070229" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/client" />
+    <SUITE FILE_PATH="coverage/PyFileTransfer$async_dummy_client.coverage" NAME="async_dummy_client Coverage Results" MODIFIED="1552140026166" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/client" />
     <SUITE FILE_PATH="coverage/PyFileTransfer$abc.coverage" NAME="abc Coverage Results" MODIFIED="1550754361538" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/PyFileTransfer$testServer.coverage" NAME="testServer Coverage Results" MODIFIED="1551633085233" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/example" />
     <SUITE FILE_PATH="coverage/PyFileTransfer$file_size.coverage" NAME="file_size Coverage Results" MODIFIED="1551285439235" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
-    <SUITE FILE_PATH="coverage/PyFileTransfer$async_server_main.coverage" NAME="async_server_main Coverage Results" MODIFIED="1551974123454" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
+    <SUITE FILE_PATH="coverage/PyFileTransfer$async_server_main.coverage" NAME="async_server_main Coverage Results" MODIFIED="1552140027863" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/async_server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6">
-              <caret line="53" column="40" selection-start-line="53" selection-start-column="40" selection-end-line="53" selection-end-column="40" />
+            <state relative-caret-position="461">
+              <caret line="75" column="28" selection-start-line="75" selection-start-column="28" selection-end-line="75" selection-end-column="28" />
               <folding>
                 <element signature="e#130#144#0" expanded="true" />
               </folding>
@@ -54,52 +50,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/example/async_file_transfer_client.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/example/async_file_transfer_server.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="40" column="14" lean-forward="true" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
-              <folding>
-                <element signature="e#0#14#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/file_list.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
-              <folding>
-                <element signature="e#0#9#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/file_size.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/request_handler.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-436">
-              <caret line="41" column="10" lean-forward="true" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="10" />
+            <state relative-caret-position="697">
+              <caret line="41" column="35" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="35" />
               <folding>
                 <element signature="e#0#33#0" expanded="true" />
               </folding>
@@ -110,11 +64,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/server_logger.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="118">
-              <caret line="39" selection-start-line="39" selection-end-line="39" />
+            <state relative-caret-position="-11">
+              <caret line="27" column="33" lean-forward="true" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
               <folding>
                 <element signature="e#0#13#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/async_dummy_client.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="257">
+              <caret line="27" column="33" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -171,23 +134,24 @@
         <option value="$PROJECT_DIR$/server/async_file_server.py" />
         <option value="$PROJECT_DIR$/example/async_file_transfer_client.py" />
         <option value="$PROJECT_DIR$/example/async_file_transfer_server.py" />
+        <option value="$PROJECT_DIR$/server/request_handler.py" />
         <option value="$PROJECT_DIR$/client/async_dummy_client.py" />
         <option value="$PROJECT_DIR$/server/async_server.py" />
-        <option value="$PROJECT_DIR$/server/request_handler.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
-    <option name="x" value="357" />
-    <option name="y" value="17" />
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="642" />
+    <option name="y" value="13" />
     <option name="width" value="1445" />
-    <option name="height" value="943" />
+    <option name="height" value="944" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -214,7 +178,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -248,7 +211,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.async_server_main">
+  <component name="RunManager" selected="Python.async_dummy_client">
     <configuration name="async_dummy_client" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PyFileTransfer" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -360,17 +323,17 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.async_server_main" />
       <item itemvalue="Python.async_dummy_client" />
       <item itemvalue="Python.async_file_server" />
       <item itemvalue="Python.async_ftp_client" />
+      <item itemvalue="Python.async_server_main" />
       <item itemvalue="Python.request_handler" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.async_server_main" />
-        <item itemvalue="Python.request_handler" />
         <item itemvalue="Python.async_dummy_client" />
+        <item itemvalue="Python.request_handler" />
         <item itemvalue="Python.async_file_server" />
         <item itemvalue="Python.async_ftp_client" />
       </list>
@@ -406,6 +369,8 @@
       <workItem from="1551874665119" duration="1530000" />
       <workItem from="1551943974969" duration="6113000" />
       <workItem from="1551950826897" duration="13542000" />
+      <workItem from="1552015855831" duration="139000" />
+      <workItem from="1552137045900" duration="2998000" />
     </task>
     <task id="LOCAL-00001" summary="1.server(cmd)&#10;2.client(gui)">
       <created>1550409876118</created>
@@ -530,7 +495,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67598000" />
+    <option name="totallyTimeSpent" value="70814000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -542,22 +507,22 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="286" y="14" width="1156" height="754" extended-state="0" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49878934" visible="true" weight="0.27281022" />
-      <window_info id="Structure" order="1" sideWeight="0.50121063" side_tool="true" weight="0.2591241" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49620253" visible="true" weight="0.152349" />
+      <window_info id="Structure" order="1" sideWeight="0.5037975" side_tool="true" weight="0.20711678" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="0" weight="0.32976654" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32907802" />
-      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49731544" visible="true" weight="0.33977455" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.3494364" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.49731544" visible="true" weight="0.32340425" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.34893617" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32907802" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.3289689" />
+      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32765958" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5026846" side_tool="true" weight="0.27801418" />
       <window_info anchor="bottom" id="Terminal" order="12" weight="0.32765958" />
@@ -627,9 +592,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/images.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/example/dummy_client.py" />
     <entry file="file://$PROJECT_DIR$/example/file_server.log" />
     <entry file="file://$PROJECT_DIR$/README.md">
@@ -659,20 +621,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/async_dummy_client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="9" lean-forward="true" selection-start-column="9" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/testServer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/server_config.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -683,57 +631,6 @@
     <entry file="file://$PROJECT_DIR$/server/async_server_log.log">
       <provider selected="true" editor-type-id="LargeFileEditor" />
       <provider editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/async_server_main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="307">
-          <caret line="31" selection-start-line="31" selection-end-line="31" />
-          <folding>
-            <element signature="e#120#153#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/file_list.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/file_size.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/server_logger.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/asyncio/base_events.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-181">
-          <caret line="1758" selection-start-line="1758" selection-end-line="1758" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/asyncio/events.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="100" selection-start-line="100" selection-end-line="100" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/tokenize.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -763,10 +660,98 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/example/async_file_transfer_client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/async_file_transfer_server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/file_list.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/file_size.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="16" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/testServer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/async_server_main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+          <folding>
+            <element signature="e#120#153#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/images.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/gui_client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/asyncio/base_events.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="142">
+          <caret line="1742" selection-start-line="1742" selection-end-line="1742" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/server_logger.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-11">
+          <caret line="27" column="33" lean-forward="true" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/asyncio/events.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="87" selection-start-line="87" selection-end-line="87" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/request_handler.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-436">
-          <caret line="41" column="10" lean-forward="true" selection-start-line="41" selection-start-column="10" selection-end-line="41" selection-end-column="10" />
+        <state relative-caret-position="697">
+          <caret line="41" column="35" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="35" />
           <folding>
             <element signature="e#0#33#0" expanded="true" />
           </folding>
@@ -775,28 +760,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/async_server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6">
-          <caret line="53" column="40" selection-start-line="53" selection-start-column="40" selection-end-line="53" selection-end-column="40" />
+        <state relative-caret-position="461">
+          <caret line="75" column="28" selection-start-line="75" selection-start-column="28" selection-end-line="75" selection-end-column="28" />
           <folding>
             <element signature="e#130#144#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/example/async_file_transfer_client.py">
+    <entry file="file://$PROJECT_DIR$/client/async_dummy_client.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/async_file_transfer_server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="40" column="14" lean-forward="true" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="257">
+          <caret line="27" column="33" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="33" />
         </state>
       </provider>
     </entry>
