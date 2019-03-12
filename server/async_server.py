@@ -48,6 +48,12 @@ class Server:
         await self.server.wait_closed()
 
     async def loop_handler(self, reader: StreamReader, writer: StreamWriter):
+        # 주고 받는 데이터의 구성
+        # || 을 기준으로 나눈다
+        # 1. 처리해야할 요청의 이름이나 순번
+        # 2. 요청할 내용
+        # 3. 패딩
+
         client_ip_addr = writer.get_extra_info('peername')
 
         a_log('클라이언트 {0}의 요청 처리 시작'.format(client_ip_addr), L_NORMAL)
@@ -65,6 +71,8 @@ class Server:
             writer.close()
 
         message = data.decode()
+        message = message.split('||')
+        message = message[0]
         a_log('클라이언트 %r 로부터 데이터를 받아옴 : %s ' % (client_ip_addr, message), L_CRITICAL_EVENT)
 
         # 데이터를 보냄
@@ -72,5 +80,5 @@ class Server:
         await writer.drain()
 
         # 소켓 종료
-        a_log('요청 처리 완료', L_CRITICAL_EVENT)
+        a_log('클라이언트 {0}의 요청 처리 완료'.format(client_ip_addr), L_NORMAL)
         writer.close()

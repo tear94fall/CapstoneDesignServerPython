@@ -5,9 +5,21 @@ async def tcp_echo_client(message, loop):
     reader, writer = await asyncio.open_connection('localhost', 8888, loop=loop)
 
     print('데이터를 보냄 : %s ' % message)
+
+    ''''
+    # 패딩 추가하는 로직
+    if len(message) < 1024:
+        padding = "||"
+        padding_size = 1024-len(message)
+        for i in range(0, padding_size-3):
+            padding += "0"
+
+        message += padding
+    '''
+
     writer.write(message.encode())
 
-    data = await reader.read(100)
+    data = await reader.read(1024)
     print('데이터를 받아옴 : %s ' % data.decode())
 
     # print('Close the socket')
