@@ -2,15 +2,23 @@ from server.async_server import *
 from server.server_logger import a_log
 from asyncio import StreamReader as reader, StreamWriter as writer
 
+BUFFER_SIZE = 1024
 
-class QQQ:
-    def __init__(self, client_ip):
+
+class DataReadAndWriteRequest:
+    def __init__(self):
+        pass
+
+    async def main(self):
+        pass
+
+
+class DataReadRequest:
+    def __init__(self, client_ip:str):
         self.client_ip_addr = client_ip
 
     async def main(self):
-        result = await request_handler(1, self.client_ip_addr)
-        result.main()
-        # =====================
+        print(self.client_ip_addr)
 
         data = await reader.read(BUFFER_SIZE)
         message = data.decode()
@@ -23,20 +31,29 @@ class QQQ:
         # 소켓 종료
         a_log('소켓 종료', L_CRITICAL_EVENT)
         writer.close()
+        return None
+
+
+class DataWriteRequest:
+    def __init__(self):
+        pass
+
+    async def main(self):
+        message = str(input("전송할 데이터를 입력해주세요"))
+        message = message.encode()
+
+        writer.write(message)
+        await writer.drain()
+
+        writer.close()
+
+        # 데이터를 보냄
+        a_log('클라이언트에게 데이터를  : %s ' % message, L_CRITICAL_EVENT)
 
 
 async def request_handler(request_number: int, client_ip_addr):
-    # a_log('클라이언트 {0} 의 요청 ID {1} 수행.'.format(client_ip_addr, request_number), L_CRITICAL_EVENT)
-    request_list_class = {
-        1: QQQ(client_ip_addr)
-    }
+    request_class = None
+    if request_number == 1:
+        request_class = DataReadRequest(client_ip_addr)
 
-    request_list_name = {
-        1: 'AAA'
-    }
-
-    request_class = request_list_class[request_number]
-    request_name = request_list_name[request_number]
-
-    #a_log('클라이언트 {0} 의 요청 명령 {1} 수행.'.format(client_ip_addr, request_name), L_CRITICAL_EVENT)
     return await request_class.main()
