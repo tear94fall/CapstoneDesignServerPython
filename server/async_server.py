@@ -30,7 +30,7 @@ class Server:
         a_log('서버 설정 완료', L_SPECIFIC)
 
     def start(self):
-        async_start = asyncio.start_server(self.io_handle, self.address, self.port, loop=self.event_loop)
+        async_start = asyncio.start_server(self.loop_handler, self.address, self.port, loop=self.event_loop)
         server = self.event_loop.run_until_complete(async_start)
         addr = server.sockets[0].getsockname()
         a_log('서버 서비스 시작 중 %s ' % str(addr), L_CRITICAL_EVENT)
@@ -47,7 +47,7 @@ class Server:
         a_log('서버 종료 완료', L_CRITICAL_EVENT)
         await self.server.wait_closed()
 
-    async def io_handle(self, reader: StreamReader, writer: StreamWriter):
+    async def loop_handler(self, reader: StreamReader, writer: StreamWriter):
         client_ip_addr = writer.get_extra_info('peername')
 
         a_log('클라이언트 {0}의 요청 처리 시작'.format(client_ip_addr), L_NORMAL)
