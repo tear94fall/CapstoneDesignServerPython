@@ -48,25 +48,15 @@ class Server:
         await self.server.wait_closed()
 
     async def io_handle(self, reader: StreamReader, writer: StreamWriter):
-        print("여기는 완료")
         client_ip_addr = writer.get_extra_info('peername')
 
         a_log('클라이언트 {0}의 요청 처리 시작'.format(client_ip_addr), L_NORMAL)
-
-        data = None
-
-        test = await request_handler(1, "localhost")
-        print(test)
-
-
-
-
-        '''
+        
         try:
             data = await reader.read(SERVER_IO_BUFFER_SIZE)
         except ConnectionError as connection_err:
             # a_log('트랜잭션 처리 실패. 연결 에러. {0}, 요청 클라이언트 {1}'.format(connection_err, remote_peer_info), L_NORMAL)
-            print("트랜잭션 처리 실패. 연걸 에러")
+            print("요청 처리 실패. 연걸 에러")
             writer.close()
 
         if not len(data) > 0:
@@ -82,6 +72,5 @@ class Server:
         await writer.drain()
 
         # 소켓 종료
-        a_log('소켓 종료', L_CRITICAL_EVENT)
+        a_log('요청 처리 완료', L_CRITICAL_EVENT)
         writer.close()
-        '''
