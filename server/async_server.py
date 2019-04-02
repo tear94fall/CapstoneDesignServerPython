@@ -62,21 +62,24 @@ class Server:
         try:
             data = await reader.read(SERVER_IO_BUFFER_SIZE)
         except ConnectionError as connection_err:
-            a_log('트랜잭션 처리 실패. 연결 에러. {0}, 요청 클라이언트 {1}'.format(connection_err, client_ip_addr), L_NORMAL)
+            a_log('요청 처리 실패. 연결 에러. {0}, 요청 클라이언트 {1}'.format(connection_err, client_ip_addr), L_NORMAL)
             writer.close()
         except Exception as unknown_err:
-            a_log('트랜잭션 처리 실패. 알 수 없는 에러. {0}, 요청 클라이언트 {1}'.format(unknown_err, client_ip_addr), L_NORMAL)
+            a_log('요청 처리 실패. 알 수 없는 에러. {0}, 요청 클라이언트 {1}'.format(unknown_err, client_ip_addr), L_NORMAL)
 
         if not len(data) > 0:
-            a_log('트랜잭션 처리 종료. 잘못 된 요청. 요청 클라이언트 {0}'.format(client_ip_addr), L_NORMAL)
+            a_log('요청 처리 종료. 잘못 된 요청. 요청 클라이언트 {0}'.format(client_ip_addr), L_NORMAL)
             writer.close()
             return
 
+        request_number = data.decode()
+        a_log('요청 번호 {0}. 요청 클라이언트 {1}'.format(request_number, client_ip_addr), L_CRITICAL_EVENT)
         # 트랜젝션 처리 로직 추가 할것
 
-
-
-
+        requestHandler = RequestHandler()
+        result = await requestHandler.Request_Binding(int(request_number))
+        a_log('요청처리 완료. 처리 요청 번호 {0}. 요청 클라이언트 {1}'.format(request_number, client_ip_addr), L_CRITICAL_EVENT)
+        writer.write(str(result).encode())
 
     def get_server_config(self):
         return 'server address :' + str(self.address) + ' port :' + str(self.port)
