@@ -1,8 +1,6 @@
 import asyncio
 import aiomysql
 
-loop = asyncio.get_event_loop()
-
 
 def num_to_change_attribute(_attribute=None):
     if not _attribute:
@@ -16,8 +14,22 @@ def num_to_change_attribute(_attribute=None):
     }.get(_column, "No selected!")
 
 
+# insert 전용
+async def test_example_execute(loop, query: str):
+    conn = await aiomysql.connect(host='127.0.0.1', port=3306,
+                                       user='root', password='root1234', db='test', loop=loop)
+    cur = await conn.cursor()
+    result = await cur.execute(query)
+    await conn.commit()
+
+    conn.close()
+    print(result)
+    return result
+
+
+# 나머지 쿼리
 @asyncio.coroutine
-def query_operator(query: str):
+def query_operator(loop, query: str):
     conn = yield from aiomysql.connect(host='127.0.0.1', port=3306,
                                        user='root', password='root1234', db='test', loop=loop)
 
@@ -26,8 +38,17 @@ def query_operator(query: str):
 
     tuple = yield from cursor.fetchall()
     conn.close()
+    print(tuple)
     return tuple
 
 
 test_query = "CREATE TABLE dept (dept_no INT(11) unsigned NOT NULL,dept_name VARCHAR(32) NOT NULL,PRIMARY KEY (dept_no))"
 test_query2 = "SELECT * from students"
+test_query3 = "SELECT * from person"
+
+
+data_insert_query = "INSERT INTO person (name, belong, phone) VALUES('유재석', 'IDE','01112345678')"
+
+
+loop = asyncio.get_event_loop()
+loop.run_until_complete(query_operator(loop, test_query3))
