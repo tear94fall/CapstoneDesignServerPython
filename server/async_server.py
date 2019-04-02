@@ -11,11 +11,19 @@
 
 import asyncio
 from asyncio import StreamReader, StreamWriter
+from server.request_handler import *
 from server.server_logger import a_log, L_CRITICAL_EVENT, L_SPECIFIC, L_NORMAL
 from server.request_handler import *
 
 BUFFER_SIZE = 512
 SERVER_IO_BUFFER_SIZE = 512
+
+
+def _get_transaction_id(data) -> int:
+    if not len(data) > 4:
+        raise ValueError('invalid data input.')
+    header_data = data[0:4]
+    return int.from_bytes(header_data, byteorder='little')
 
 
 class Server:
@@ -48,37 +56,27 @@ class Server:
         await self.server.wait_closed()
 
     async def loop_handler(self, reader: StreamReader, writer: StreamWriter):
-        # 주고 받는 데이터의 구성
-        # || 을 기준으로 나눈다
-        # 1. 처리해야할 요청의 이름이나 순번
-        # 2. 요청할 내용
-        # 3. 패딩
-
         client_ip_addr = writer.get_extra_info('peername')
-
         a_log('클라이언트 {0}의 요청 처리 시작'.format(client_ip_addr), L_NORMAL)
-        
+
         try:
             data = await reader.read(SERVER_IO_BUFFER_SIZE)
         except ConnectionError as connection_err:
-            # a_log('트랜잭션 처리 실패. 연결 에러. {0}, 요청 클라이언트 {1}'.format(connection_err, remote_peer_info), L_NORMAL)
-            print("요청 처리 실패. 연걸 에러")
+            a_log('트랜잭션 처리 실패. 연결 에러. {0}, 요청 클라이언트 {1}'.format(connection_err, client_ip_addr), L_NORMAL)
             writer.close()
+        except Exception as unknown_err:
+            a_log('트랜잭션 처리 실패. 알 수 없는 에러. {0}, 요청 클라이언트 {1}'.format(unknown_err, client_ip_addr), L_NORMAL)
 
         if not len(data) > 0:
-            # a_log('트랜잭션 처리 종료. 잘못 된 요청. 요청 클라이언트 {0}'.format(remote_peer_info), L_NORMAL)
-            print("데이터 없음")
+            a_log('트랜잭션 처리 종료. 잘못 된 요청. 요청 클라이언트 {0}'.format(client_ip_addr), L_NORMAL)
             writer.close()
+            return
 
-        message = data.decode()
-        message = message.split('||')
-        message = message[0]
-        a_log('클라이언트 %r 로부터 데이터를 받아옴 : %s ' % (client_ip_addr, message), L_CRITICAL_EVENT)
+        # 트랜젝션 처리 로직 추가 할것
 
-        # 데이터를 보냄
-        writer.write(data)
-        await writer.drain()
 
-        # 소켓 종료
-        a_log('클라이언트 {0}의 요청 처리 완료'.format(client_ip_addr), L_NORMAL)
-        writer.close()
+
+
+
+    def get_server_config(self):
+        return 'server address :' + str(self.address) + ' port :' + str(self.port)
