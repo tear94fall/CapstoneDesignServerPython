@@ -74,7 +74,9 @@ class Server:
 
         request_number = data.decode()
         a_log('요청 번호 {0}. 요청 클라이언트 {1}'.format(request_number, client_ip_addr), L_CRITICAL_EVENT)
-        # 트랜젝션 처리 로직 추가 할것
+        # 데이터를 주고 받는 순서를 확실하게 구분하여
+        # 로직을 짤것
+        # 로직 추가
 
         requestHandler = RequestHandler()
         result = await requestHandler.Request_Binding(int(request_number))
