@@ -9,17 +9,23 @@ class RequestHandler:
         self.request = []
 
     async def Request_Binding(self, request_number):
+        result = None
         # 요청 넘버는 2의 배수로 정한다
         if request_number == 2:
             echo = EchoRequest()
             result = await echo.main()
+
         elif request_number == 4:
-            select = SelectRequest()
+            select = DataSelectRequest()
             result = await select.main()
+
         elif request_number == 6:
-            pass
+            create = CreateTableRequest()
+            result = await create.main()
+
         elif request_number == 8:
-            pass
+            insert = DataInsertRequest()
+            result = await insert.main()
 
         return result
 
@@ -29,18 +35,18 @@ class EchoRequest(RequestHandler):
         super().__init__()
 
     async def main(self):
-        test_query2 = "SELECT student_name from students"
-        result = await query_operator(test_query2)
+        test_query = "SELECT student_name from students"
+        result = await query_operator(test_query)
         return result
 
 
-class SelectRequest(RequestHandler):
+class DataSelectRequest(RequestHandler):
     def __init__(self):
         super().__init__()
 
     async def main(self):
-        test_query2 = "SELECT insert_date from students"
-        result = await query_operator(test_query2)
+        select_query = "SELECT insert_date from students"
+        result = await query_operator(select_query)
         return result
 
 
@@ -49,5 +55,21 @@ class CreateTableRequest(RequestHandler):
         super().__init__()
 
     async def main(self):
-        result = None
+        table_create_query = "CREATE TABLE person " \
+                             "( _id INT AUTO_INCREMENT, name VARCHAR(32) NOT NULL, " \
+                             "belong VARCHAR(12) DEFAULT 'FOO', " \
+                             "phone VARCHAR(12), PRIMARY KEY(_id) ) " \
+                             "ENGINE=INNODB"
+        result = await query_operator(table_create_query)
+        return result
+
+
+class DataInsertRequest(RequestHandler):
+    def __init__(self):
+        super().__init__()
+
+    async def main(self):
+        data_insert_query = "INSERT INTO person (name, belong, phone) VALUES('유재석', 'IDE','01112345678')"
+
+        result = await test_example_execute(data_insert_query)
         return result
