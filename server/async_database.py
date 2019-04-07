@@ -18,6 +18,9 @@ loop = asyncio.get_event_loop()
 
 class DataBaseInIt:
     def __init__(self):
+        self.conn = None
+
+    async def db_init(self):
         self.conn = await aiomysql.connect(host='127.0.0.1', port=3306,
                                        user='root', password='root1234', db='test', loop=loop)
 
