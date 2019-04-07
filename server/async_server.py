@@ -77,7 +77,7 @@ class Server:
         # 데이터를 주고 받는 순서를 확실하게 구분하여
         # 로직을 짤것
         # 로직 추가
-
+        request_number = 8
         requestHandler = RequestHandler()
         result = await requestHandler.Request_Binding(int(request_number))
         a_log('요청처리 완료. 처리 요청 번호 {0}. 요청 클라이언트 {1}'.format(request_number, client_ip_addr), L_CRITICAL_EVENT)
