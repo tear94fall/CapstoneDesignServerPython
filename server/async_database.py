@@ -16,6 +16,12 @@ def num_to_change_attribute(_attribute=None):
 loop = asyncio.get_event_loop()
 
 
+class DataBaseInIt:
+    def __init__(self):
+        self.conn = await aiomysql.connect(host='127.0.0.1', port=3306,
+                                       user='root', password='root1234', db='test', loop=loop)
+
+
 # insert 전용
 async def test_example_execute(query: str):
     conn = await aiomysql.connect(host='127.0.0.1', port=3306,
