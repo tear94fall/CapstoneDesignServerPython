@@ -40,9 +40,7 @@ async def test_example_execute(query: str):
 # 나머지 쿼리
 @asyncio.coroutine
 def query_operator(query: str):
-    conn = yield from aiomysql.connect(host='127.0.0.1', port=3306,
-                                       user='root', password='root1234', db='test', loop=loop)
-
+    conn = yield from aiomysql.connect(host='127.0.0.1', port=3306, user='root', password='root1234', db='test', loop=loop)
     cursor = yield from conn.cursor(aiomysql.DictCursor)
     yield from cursor.execute(query)
 
