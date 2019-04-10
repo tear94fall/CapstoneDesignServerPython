@@ -56,6 +56,15 @@ class Server:
         await self.server.wait_closed()
 
     async def loop_handler(self, reader: StreamReader, writer: StreamWriter):
+        '''
+        클라이언트의 처리는 다음과 같이 처리 할것
+
+        1. 클라이언트에서 서버에데이터를 보냄 (데이터 구조는 요청번호와 해당 데이터로 구성 되어있음)
+        2. 서버에서 클라이언트의데이터를 받음 (받은 데이터를 요청번호와 처리 데이터로 나눈후 해당 요청 번호에 따라 처리)
+        3. 서버에서 클라이언트에게 요청에대한 결과 값을 보냄
+        '''
+
+
         client_ip_addr = writer.get_extra_info('peername')
         a_log('클라이언트 {0}의 요청 처리 시작'.format(client_ip_addr), L_NORMAL)
 
@@ -74,14 +83,19 @@ class Server:
 
         request_number = data.decode()
         a_log('요청 번호 {0}. 요청 클라이언트 {1}'.format(request_number, client_ip_addr), L_CRITICAL_EVENT)
-        # 데이터를 주고 받는 순서를 확실하게 구분하여
-        # 로직을 짤것
-        # 로직 추가
+
+        '''
+        요청 처리를 위한 요청 번호
+        '''
+
         request_number = 8
         requestHandler = RequestHandler()
         result = await requestHandler.Request_Binding(int(request_number))
         a_log('요청처리 완료. 처리 요청 번호 {0}. 요청 클라이언트 {1}'.format(request_number, client_ip_addr), L_CRITICAL_EVENT)
-        writer.write(str(result).encode())
+
+        # 데이터를 보냄
+        test = "동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리 나라 만세"
+        writer.write(test.encode())
 
     def get_server_config(self):
         return 'server address :' + str(self.address) + ' port :' + str(self.port)
