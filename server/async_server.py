@@ -82,20 +82,24 @@ class Server:
             return
 
         request_number = data.decode()
+        request_number = request_number.split("|")
+        request_number = int(request_number[0])
         a_log('요청 번호 {0}. 요청 클라이언트 {1}'.format(request_number, client_ip_addr), L_CRITICAL_EVENT)
 
         '''
         요청 처리를 위한 요청 번호
         '''
 
-        request_number = 8
         requestHandler = RequestHandler()
         result = await requestHandler.Request_Binding(int(request_number))
-        a_log('요청처리 완료. 처리 요청 번호 {0}. 요청 클라이언트 {1}'.format(request_number, client_ip_addr), L_CRITICAL_EVENT)
 
         # 데이터를 보냄
-        test = "동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리 나라 만세"
+        test = data.decode()
         writer.write(test.encode())
+        a_log('데이터 전송. 전송 내용 <{0}>. 요청 클라이언트 {1}'.format(test, client_ip_addr), L_CRITICAL_EVENT)
+
+        # 요청 완료 로그
+        a_log('요청처리 완료. 처리 요청 번호 {0}. 요청 클라이언트 {1}'.format(request_number, client_ip_addr), L_CRITICAL_EVENT)
 
     def get_server_config(self):
         return 'server address :' + str(self.address) + ' port :' + str(self.port)
