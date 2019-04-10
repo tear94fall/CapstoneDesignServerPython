@@ -2,6 +2,7 @@ import hashlib
 from server.async_database import *
 from asyncio import StreamReader, StreamWriter
 from server.async_database import *
+import aiomysql
 
 
 class RequestHandler:
@@ -35,7 +36,7 @@ class EchoRequest(RequestHandler):
         super().__init__()
 
     async def main(self):
-        test_query = "SELECT student_name from students"
+        test_query = "SELECT * FROM students;"
         result = await query_operator(test_query)
         return result
 
