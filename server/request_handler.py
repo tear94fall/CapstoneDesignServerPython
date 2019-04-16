@@ -33,6 +33,13 @@ class RequestHandler:
         return result
 
 
+'''
+현재 EchoRequest 로직에서만 
+데이터 버퍼를 이용해 데이터를 처리 하도록함.
+차후 생성하는 객체 모두에 다음과 같이 적용 시킬것
+'''
+
+
 class EchoRequest(RequestHandler):
     def __init__(self, data_buffer: DataBuffer):
         super().__init__(data_buffer)
