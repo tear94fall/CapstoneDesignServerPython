@@ -3,17 +3,19 @@ from server.async_database import *
 from asyncio import StreamReader, StreamWriter
 from server.async_database import *
 import aiomysql
+from server.data_buffer import DataBuffer
 
 
 class RequestHandler:
-    def __init__(self):
+    def __init__(self, data_buffer: DataBuffer):
         self.request = []
+        self.data_buffer = data_buffer
 
     async def Request_Binding(self, request_number):
         result = None
         # 요청 넘버는 2의 배수로 정한다
         if request_number == 2:
-            echo = EchoRequest()
+            echo = EchoRequest(self.data_buffer)
             result = await echo.main()
 
         elif request_number == 4:
@@ -32,10 +34,12 @@ class RequestHandler:
 
 
 class EchoRequest(RequestHandler):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, data_buffer: DataBuffer):
+        super().__init__(data_buffer)
 
     async def main(self):
+        temp = self.data_buffer.get_data()
+        print("data_buffer data is " + temp)
         test_query = "SELECT * FROM students;"
         result = await query_operator(test_query)
         return result
