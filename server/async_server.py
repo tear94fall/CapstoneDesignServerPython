@@ -14,6 +14,7 @@ from asyncio import StreamReader, StreamWriter
 from server.request_handler import *
 from server.server_logger import a_log, L_CRITICAL_EVENT, L_SPECIFIC, L_NORMAL
 from server.request_handler import *
+from server.data_buffer import *
 
 BUFFER_SIZE = 512
 SERVER_IO_BUFFER_SIZE = 512
@@ -35,6 +36,7 @@ class Server:
         self.event_loop = asyncio.get_event_loop()
         self.client_addr = ''
         self.is_server_on = False
+        self.DataBuffer = None
         a_log('서버 설정 완료', L_SPECIFIC)
 
     def start(self):
@@ -56,12 +58,17 @@ class Server:
         await self.server.wait_closed()
 
     async def loop_handler(self, reader: StreamReader, writer: StreamWriter):
+        data_buffer = DataBuffer()
+
         '''
         클라이언트의 처리는 다음과 같이 처리 할것
 
         1. 클라이언트에서 서버에데이터를 보냄 (데이터 구조는 요청번호와 해당 데이터로 구성 되어있음)
         2. 서버에서 클라이언트의데이터를 받음 (받은 데이터를 요청번호와 처리 데이터로 나눈후 해당 요청 번호에 따라 처리)
         3. 서버에서 클라이언트에게 요청에대한 결과 값을 보냄
+
+
+        데이터 버퍼 객체에 받은 데이터를 저장한뒤 요청 핸드러에서 클라이언트가 보낸 데이터를 받는다
         '''
 
 
@@ -82,15 +89,22 @@ class Server:
             return
 
         request_number = data.decode()
-        request_number = request_number.split("|")
-        request_number = int(request_number[0])
+
+        temp = request_number
+
+        request_number = request_number.split(",")
+        for i in request_number:
+            pass
+
+        request_number = 2
         a_log('요청 번호 {0}. 요청 클라이언트 {1}'.format(request_number, client_ip_addr), L_CRITICAL_EVENT)
 
         '''
         요청 처리를 위한 요청 번호
         '''
 
-        requestHandler = RequestHandler()
+        data_buffer.set_data(temp)
+        requestHandler = RequestHandler(data_buffer)
         result = await requestHandler.Request_Binding(int(request_number))
 
         # 데이터를 보냄
