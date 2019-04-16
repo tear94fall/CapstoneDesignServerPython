@@ -71,49 +71,49 @@ class Server:
         데이터 버퍼 객체에 받은 데이터를 저장한뒤 요청 핸드러에서 클라이언트가 보낸 데이터를 받는다
         '''
 
-
         client_ip_addr = writer.get_extra_info('peername')
         a_log('클라이언트 {0}의 요청 처리 시작'.format(client_ip_addr), L_NORMAL)
 
         try:
             data = await reader.read(SERVER_IO_BUFFER_SIZE)
+            if not len(data) > 0:
+                a_log('요청 처리 종료. 잘못 된 요청. 요청 클라이언트 {0}'.format(client_ip_addr), L_NORMAL)
+                writer.close()
+                return
+
+            request_number = data.decode()
+
+            temp = request_number
+
+            request_number = request_number.split(",")
+            for i in request_number:
+                pass
+
+            request_number = 2
+            a_log('요청 번호 {0}. 요청 클라이언트 {1}'.format(request_number, client_ip_addr), L_CRITICAL_EVENT)
+
+            '''
+            요청 처리를 위한 요청 번호
+            '''
+
+            data_buffer.set_data(temp)
+            requestHandler = RequestHandler(data_buffer)
+            result = await requestHandler.Request_Binding(int(request_number))
+
+            # 데이터를 보냄
+            test = data.decode()
+            writer.write(test.encode())
+            a_log('데이터 전송. 전송 내용 <{0}>. 요청 클라이언트 {1}'.format(test, client_ip_addr), L_CRITICAL_EVENT)
+
+            # 요청 완료 로그
+            a_log('요청처리 완료. 처리 요청 번호 {0}. 요청 클라이언트 {1}'.format(request_number, client_ip_addr), L_CRITICAL_EVENT)
+
         except ConnectionError as connection_err:
             a_log('요청 처리 실패. 연결 에러. {0}, 요청 클라이언트 {1}'.format(connection_err, client_ip_addr), L_NORMAL)
             writer.close()
         except Exception as unknown_err:
             a_log('요청 처리 실패. 알 수 없는 에러. {0}, 요청 클라이언트 {1}'.format(unknown_err, client_ip_addr), L_NORMAL)
 
-        if not len(data) > 0:
-            a_log('요청 처리 종료. 잘못 된 요청. 요청 클라이언트 {0}'.format(client_ip_addr), L_NORMAL)
-            writer.close()
-            return
-
-        request_number = data.decode()
-
-        temp = request_number
-
-        request_number = request_number.split(",")
-        for i in request_number:
-            pass
-
-        request_number = 2
-        a_log('요청 번호 {0}. 요청 클라이언트 {1}'.format(request_number, client_ip_addr), L_CRITICAL_EVENT)
-
-        '''
-        요청 처리를 위한 요청 번호
-        '''
-
-        data_buffer.set_data(temp)
-        requestHandler = RequestHandler(data_buffer)
-        result = await requestHandler.Request_Binding(int(request_number))
-
-        # 데이터를 보냄
-        test = data.decode()
-        writer.write(test.encode())
-        a_log('데이터 전송. 전송 내용 <{0}>. 요청 클라이언트 {1}'.format(test, client_ip_addr), L_CRITICAL_EVENT)
-
-        # 요청 완료 로그
-        a_log('요청처리 완료. 처리 요청 번호 {0}. 요청 클라이언트 {1}'.format(request_number, client_ip_addr), L_CRITICAL_EVENT)
 
     def get_server_config(self):
         return 'server address :' + str(self.address) + ' port :' + str(self.port)
