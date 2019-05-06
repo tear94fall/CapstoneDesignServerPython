@@ -42,8 +42,10 @@ class Server:
     def start(self):
         async_start = asyncio.start_server(self.loop_handler, self.address, self.port, loop=self.event_loop)
         server = self.event_loop.run_until_complete(async_start)
-        addr = server.sockets[0].getsockname()
-        a_log('서버 서비스 시작 중 %s ' % str(addr), L_CRITICAL_EVENT)
+        socket_info = server.sockets[0].getsockname()
+        ip_addr = socket_info[0]
+        port_number = socket_info[1]
+        a_log('서버 서비스 시작 중. IP 주소: %s, 포트 번호: %s ' %(ip_addr, port_number), L_CRITICAL_EVENT)
         self.event_loop.run_forever()
         self.is_server_on = True
 
@@ -81,29 +83,28 @@ class Server:
                 writer.close()
                 return
 
-            request_number = data.decode()
+            request_number = None
+            str_data = data.decode('utf-8')
+            str_data = str_data.replace("{", "", 1)
+            str_data = str_data.replace("}", "", 1)
+            str_data = str_data.replace(" ", "")
+            str_data = str_data.split(',')
 
-            temp = request_number
+            for i in str_data:
+                i = i.split('=')
+                if i[0] == "request_number":
+                    request_number = int(i[1])
 
-            request_number = request_number.split(",")
-            for i in request_number:
-                pass
-
-            request_number = 2
             a_log('요청 번호 {0}. 요청 클라이언트 {1}'.format(request_number, client_ip_addr), L_CRITICAL_EVENT)
+            data_buffer.set_data(str(str_data))
 
-            '''
-            요청 처리를 위한 요청 번호
-            '''
-
-            data_buffer.set_data(temp)
             requestHandler = RequestHandler(data_buffer)
             result = await requestHandler.Request_Binding(int(request_number))
 
             # 데이터를 보냄
-            test = data.decode()
-            writer.write(test.encode())
-            a_log('데이터 전송. 전송 내용 <{0}>. 요청 클라이언트 {1}'.format(test, client_ip_addr), L_CRITICAL_EVENT)
+            writer.write(result.encode())
+
+            a_log('데이터 전송. 전송 내용 <{0}>. 요청 클라이언트 {1}'.format(result, client_ip_addr), L_CRITICAL_EVENT)
 
             # 요청 완료 로그
             a_log('요청처리 완료. 처리 요청 번호 {0}. 요청 클라이언트 {1}'.format(request_number, client_ip_addr), L_CRITICAL_EVENT)
@@ -113,7 +114,6 @@ class Server:
             writer.close()
         except Exception as unknown_err:
             a_log('요청 처리 실패. 알 수 없는 에러. {0}, 요청 클라이언트 {1}'.format(unknown_err, client_ip_addr), L_NORMAL)
-
 
     def get_server_config(self):
         return 'server address :' + str(self.address) + ' port :' + str(self.port)
