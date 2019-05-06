@@ -85,17 +85,18 @@ class LoginRequest(RequestHandler):
             db_id = None
             db_pw = None
 
-            result = result[0]
-            db_id = result['id']
-            db_pw = result['passwd']
+            for i in result:
+                db_id = i['id']
+                db_pw = i['passwd']
 
-            if(id==db_id):
-                if(pw==db_pw):
-                    result = "true"
+                if(id==db_id):
+                    if(pw==db_pw):
+                        result = "true"
+                        return result
+                    else:
+                        result = "false"
                 else:
                     result = "false"
-            else:
-                result = "false"
 
             return result
         except:

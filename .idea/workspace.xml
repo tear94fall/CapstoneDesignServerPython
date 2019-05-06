@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5490af6c-48a8-4c49-8a75-29386717e238" name="Default Changelist" comment="">
+    <list default="true" id="5490af6c-48a8-4c49-8a75-29386717e238" name="Default Changelist" comment="데이터 처리 관계&#10;1. 요청 시작 알림&#10;2. 클라이언트로 부터 데이터를 받아옴 (+에러 처리)&#10;3.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/async_dummy_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/async_dummy_client.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/async_server.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/async_server.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/async_server_log.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/request_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/request_handler.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -32,27 +33,41 @@
     <SUITE FILE_PATH="coverage/PyFileTransfer$abc.coverage" NAME="abc Coverage Results" MODIFIED="1550754361538" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/PyFileTransfer$testServer.coverage" NAME="testServer Coverage Results" MODIFIED="1551633085233" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/example" />
     <SUITE FILE_PATH="coverage/PyFileTransfer$file_size.coverage" NAME="file_size Coverage Results" MODIFIED="1551285439235" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
-    <SUITE FILE_PATH="coverage/PyFileTransfer$async_server_main.coverage" NAME="async_server_main Coverage Results" MODIFIED="1552406662497" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
+    <SUITE FILE_PATH="coverage/PyFileTransfer$async_server_main.coverage" NAME="async_server_main Coverage Results" MODIFIED="1553241915603" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/request_handler.py">
+        <entry file="file://$PROJECT_DIR$/server/async_server_main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="119">
-              <caret line="7" column="12" lean-forward="true" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+            <state relative-caret-position="221">
+              <caret line="29" column="62" selection-start-line="29" selection-start-column="62" selection-end-line="30" />
               <folding>
-                <element signature="e#0#33#0" expanded="true" />
+                <element signature="e#120#153#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/async_dummy_client.py">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/data_buffer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="104">
-              <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+            <state relative-caret-position="-17">
+              <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -60,10 +75,46 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/async_server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="82" column="34" selection-start-line="82" selection-start-column="34" selection-end-line="82" selection-end-column="34" />
+            <state relative-caret-position="190">
+              <caret line="102" selection-start-line="102" selection-end-line="102" />
               <folding>
                 <element signature="e#130#144#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/request_handler.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="122">
+              <caret line="91" column="30" selection-start-line="91" selection-start-column="30" selection-end-line="91" selection-end-column="30" />
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/server_logger.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-323">
+              <caret line="75" column="38" selection-start-line="75" selection-start-column="38" selection-end-line="75" selection-end-column="38" />
+              <folding>
+                <element signature="e#0#13#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/async_database.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="228">
+              <caret line="48" selection-start-line="48" selection-end-line="48" />
+              <folding>
+                <element signature="e#0#14#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -84,8 +135,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/abc.py" />
         <option value="$PROJECT_DIR$/Server.py" />
         <option value="$PROJECT_DIR$/Client.py" />
         <option value="$PROJECT_DIR$/Server/Server.py" />
@@ -121,25 +170,37 @@
         <option value="$PROJECT_DIR$/server/async_file_server.py" />
         <option value="$PROJECT_DIR$/example/async_file_transfer_client.py" />
         <option value="$PROJECT_DIR$/example/async_file_transfer_server.py" />
-        <option value="$PROJECT_DIR$/server/async_server_log.log" />
         <option value="$PROJECT_DIR$/client/test.py" />
-        <option value="$PROJECT_DIR$/server/request_handler.py" />
-        <option value="$PROJECT_DIR$/server/async_server.py" />
+        <option value="$PROJECT_DIR$/server/__init__.py" />
+        <option value="$PROJECT_DIR$/server/transaction.py" />
+        <option value="$PROJECT_DIR$/server/unit_test.py" />
+        <option value="$PROJECT_DIR$/server/async_server_log.log" />
+        <option value="$PROJECT_DIR$/server/response.py" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/server/encoding.py" />
+        <option value="$PROJECT_DIR$/server/async_database.py" />
+        <option value="$PROJECT_DIR$/server/server_logger.py" />
+        <option value="$PROJECT_DIR$/client/client.py" />
         <option value="$PROJECT_DIR$/client/async_dummy_client.py" />
+        <option value="$PROJECT_DIR$/server/async_server_main.py" />
+        <option value="$PROJECT_DIR$/server/data_buffer.py" />
+        <option value="$PROJECT_DIR$/server/async_server.py" />
+        <option value="$PROJECT_DIR$/server/request_handler.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="386" />
-    <option name="y" value="48" />
-    <option name="width" value="1445" />
-    <option name="height" value="945" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="72" />
+    <option name="y" value="18" />
+    <option name="width" value="1545" />
+    <option name="height" value="928" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -155,23 +216,22 @@
             <path>
               <item name="PyFileTransfer" type="b2602c69:ProjectViewProjectNode" />
               <item name="PyFileTransfer" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="PyFileTransfer" type="b2602c69:ProjectViewProjectNode" />
-              <item name="PyFileTransfer" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/sonoum_auth_server" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../untitled1" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
@@ -200,7 +260,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.async_dummy_client">
+  <component name="RunManager" selected="Python.async_server_main">
     <configuration name="async_dummy_client" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PyFileTransfer" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -223,29 +283,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="async_server" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="PyFileTransfer" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/server" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/server/async_server.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="async_server_main" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="async_server_main" type="PythonConfigurationType" factoryName="Python">
       <module name="PyFileTransfer" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -267,29 +305,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="request_handler" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="PyFileTransfer" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/server" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/server/request_handler.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="client" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="PyFileTransfer" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -302,7 +318,73 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/client/test.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/client/client.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="data_buffer" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="PyFileTransfer" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/server" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/server/data_buffer.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="encoding" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="PyFileTransfer" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/server" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/server/encoding.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="gui_client" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="PyFileTransfer" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/client" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/client/gui_client.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -312,19 +394,20 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.async_dummy_client" />
       <item itemvalue="Python.async_server_main" />
-      <item itemvalue="Python.request_handler" />
-      <item itemvalue="Python.async_server" />
-      <item itemvalue="Python.test" />
+      <item itemvalue="Python.async_dummy_client" />
+      <item itemvalue="Python.gui_client" />
+      <item itemvalue="Python.encoding" />
+      <item itemvalue="Python.data_buffer" />
+      <item itemvalue="Python.client" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.async_dummy_client" />
-        <item itemvalue="Python.async_server_main" />
-        <item itemvalue="Python.async_server" />
-        <item itemvalue="Python.test" />
-        <item itemvalue="Python.request_handler" />
+        <item itemvalue="Python.client" />
+        <item itemvalue="Python.data_buffer" />
+        <item itemvalue="Python.encoding" />
+        <item itemvalue="Python.gui_client" />
       </list>
     </recent_temporary>
   </component>
@@ -362,28 +445,34 @@
       <workItem from="1552137045900" duration="3132000" />
       <workItem from="1552262974126" duration="2268000" />
       <workItem from="1552300686259" duration="1421000" />
-      <workItem from="1552401322699" duration="3464000" />
-    </task>
-    <task id="LOCAL-00001" summary="1.server(cmd)&#10;2.client(gui)">
-      <created>1550409876118</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1550409876118</updated>
-    </task>
-    <task id="LOCAL-00002" summary="1.exeMaker add(make py to exe)">
-      <created>1550415156439</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1550415156439</updated>
-    </task>
-    <task id="LOCAL-00003" summary="1.Client ui modified">
-      <created>1550751462932</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1550751462932</updated>
+      <workItem from="1552401322699" duration="5847000" />
+      <workItem from="1552575588488" duration="599000" />
+      <workItem from="1553241741526" duration="204000" />
+      <workItem from="1553909542154" duration="1434000" />
+      <workItem from="1554076660064" duration="3129000" />
+      <workItem from="1554123386719" duration="3888000" />
+      <workItem from="1554133202487" duration="9822000" />
+      <workItem from="1554198713698" duration="4621000" />
+      <workItem from="1554353354990" duration="4513000" />
+      <workItem from="1554442584435" duration="1022000" />
+      <workItem from="1554621225130" duration="1255000" />
+      <workItem from="1554711700198" duration="6255000" />
+      <workItem from="1554858220602" duration="1786000" />
+      <workItem from="1554900362667" duration="3852000" />
+      <workItem from="1554977991873" duration="711000" />
+      <workItem from="1555287245292" duration="1555000" />
+      <workItem from="1555335445840" duration="139000" />
+      <workItem from="1555413184861" duration="4199000" />
+      <workItem from="1555433356123" duration="1264000" />
+      <workItem from="1555508706869" duration="1235000" />
+      <workItem from="1556612619898" duration="7484000" />
+      <workItem from="1556630516934" duration="488000" />
+      <workItem from="1556784462664" duration="2502000" />
+      <workItem from="1556789397224" duration="1032000" />
+      <workItem from="1556803168745" duration="2138000" />
+      <workItem from="1556805598638" duration="73000" />
+      <workItem from="1556819190817" duration="20000" />
+      <workItem from="1557128585978" duration="9108000" />
     </task>
     <task id="LOCAL-00004" summary="1.전체적인 ui 변경&#10;2.에러처리 로직 변경&#10;3.전체적인 로직 변경">
       <created>1550756069811</created>
@@ -511,11 +600,260 @@
       <option name="project" value="LOCAL" />
       <updated>1552404707886</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="message padding add logic modified">
+      <created>1552434950658</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1552434950658</updated>
+    </task>
+    <task id="LOCAL-00023" summary="실행 로직과 쿼리문 로직을 분리하여 작성 할것">
+      <created>1554173441797</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1554173441797</updated>
+    </task>
+    <task id="LOCAL-00024" summary="init 파일 추가">
+      <created>1554173455876</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1554173455876</updated>
+    </task>
+    <task id="LOCAL-00025" summary="요청 처리 로직 수정중">
+      <created>1554173472686</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1554173472686</updated>
+    </task>
+    <task id="LOCAL-00026" summary="select 쿼리문을 이용한 요청 처리 객체 수정">
+      <created>1554176141948</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1554176141948</updated>
+    </task>
+    <task id="LOCAL-00027" summary="1.dummy client와 데이터 주고 받는것 완성.&#10;2.requestHandler를 이용해서 db의 값을 조회후 리턴하는 로직 완성.">
+      <created>1554176197423</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1554176197423</updated>
+    </task>
+    <task id="LOCAL-00028" summary="유닛 테스트 로직 작성">
+      <created>1554176311740</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1554176311740</updated>
+    </task>
+    <task id="LOCAL-00029" summary="inser t전용 쿼리처리 함수 추가">
+      <created>1554201799556</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1554201799556</updated>
+    </task>
+    <task id="LOCAL-00030" summary="요청에대한 응답 객체 추가">
+      <created>1554201834476</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1554201834476</updated>
+    </task>
+    <task id="LOCAL-00031" summary="데이터 삽입 쿼리문 정상적으로 작동">
+      <created>1554354154356</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1554354154356</updated>
+    </task>
+    <task id="LOCAL-00032" summary="데이터 주고 받는 로직 다시 수정할것">
+      <created>1554354190965</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1554354190965</updated>
+    </task>
+    <task id="LOCAL-00033" summary="서버와 클라이언트가 주고 받는 데이터를 저장해둘 데이터 버퍼 객체 추가">
+      <created>1554354218680</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1554354218680</updated>
+    </task>
+    <task id="LOCAL-00034" summary="요청 핸들러 정상적으로 작동함&#10;요청 바인딩도 정상적으로 작동함">
+      <created>1554354243229</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1554354243229</updated>
+    </task>
+    <task id="LOCAL-00035" summary="클라이언트 이미지 정렬 부분 수정">
+      <created>1554354265619</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1554354265619</updated>
+    </task>
+    <task id="LOCAL-00036" summary="데이터 베이스 초기화 객체 추가">
+      <created>1554621322738</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1554621322738</updated>
+    </task>
+    <task id="LOCAL-00037" summary="byte 데이터 전송을 위한 데이터 인코딩, 디코딩 확인용 파일 추가">
+      <created>1554621360856</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1554621360856</updated>
+    </task>
+    <task id="LOCAL-00038" summary="바이트 데이터를 인코딩 한후 출력하도록 수정할것">
+      <created>1554621387901</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1554621387901</updated>
+    </task>
+    <task id="LOCAL-00039" summary="1.db_init method 추가">
+      <created>1554643038739</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1554643038739</updated>
+    </task>
+    <task id="LOCAL-00040" summary="주석에 처리과정 추가했음 해당 로직으로 수정할것&#10;1. 클라이언트가 서버에게 데이터를 보냄&#10;2. 서버가 클라이언트에게 다시 데이터를 보냄">
+      <created>1554859228758</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1554859228758</updated>
+    </task>
+    <task id="LOCAL-00041" summary="작동 쿼리들 추가할것">
+      <created>1554859241614</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1554859241614</updated>
+    </task>
+    <task id="LOCAL-00042" summary="결과를 받아야 하는 로직과 결과를 받지 않아도 되는 로직 추가할것">
+      <created>1554859265478</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1554859265478</updated>
+    </task>
+    <task id="LOCAL-00043" summary="데이터 처리 관계&#10;1. 요청 시작함을 알림&#10;2. 클라이언트로 부터 데이터를 받아옴 (+에러 처리)&#10;3. 클라이언트로 부터 받은 데이터를 요청 번호와 요청 데이터로 구분&#10;4. 데이터를 다시 전송함 (현재는 받은 데이터 그대로 전송 차후 수정)&#10;5. 요청을 완료함을 알림">
+      <created>1554902793621</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1554902793621</updated>
+    </task>
+    <task id="LOCAL-00044" summary="1.데이터 버퍼 클래스 추가&#10;2.데이터 암호화 추가">
+      <created>1555335481354</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1555335481354</updated>
+    </task>
+    <task id="LOCAL-00045" summary="1. 받은 데이터를 데이터 버퍼 객체에 넣어서 요청 핸들러에게 넘긴다">
+      <created>1555420123163</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1555420123163</updated>
+    </task>
+    <task id="LOCAL-00046" summary="받은 데이터를 데이터 버퍼에 넣은뒤 값을 처리함.&#10;데이터 버퍼만 데이터에 접근할수 있음&#10;데이터 버퍼에서 데이터를 넣고 요청 핸드러에서 받는 로직을 구현함">
+      <created>1555420164351</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1555420164351</updated>
+    </task>
+    <task id="LOCAL-00047" summary="1.데이터 버퍼를 통해 데이터를 관리하는것을 적용시킴&#10;2.EchoRequest 객체에만 로직을 적용함">
+      <created>1555420262101</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1555420262101</updated>
+    </task>
+    <task id="LOCAL-00048" summary="데이터 주고 받는 부분 try~catch 로직 수정함">
+      <created>1555420646116</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1555420646116</updated>
+    </task>
+    <task id="LOCAL-00049" summary="1.로그파일 이름 수정">
+      <created>1557138222956</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1557138222956</updated>
+    </task>
+    <task id="LOCAL-00050" summary="1.로그인 처리를 위한 4번 요청 로직 수정&#10;2.정상적으로 로그인 완료 (데이터 버퍼에 데이터 넣고 뺴기 가능)&#10;3.안드로이드와 소켓 통신 완료">
+      <created>1557138262535</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1557138262536</updated>
+    </task>
+    <task id="LOCAL-00051" summary="1.서버의 직관적이지 않은 로직 수정(ip표시 문제등)&#10;2.데이터 주고받는 순서는 (클라이언트-&gt;서버, 서버-&gt;클라이언트)과 같음&#10;3.자바와의 타입 차이 때문에 문자열로 true or false를 전송함(데이터 전송시에 그냥 문자열 그대로 넣은뒤 전송하면되도록 로직을 짬)&#10;4.자바의 map은 파이썬의 딕셔너리와 다르므로 문자열로 바꾼뒤 수정한다음 로직을 처리함.">
+      <created>1557138393759</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1557138393759</updated>
+    </task>
+    <task id="LOCAL-00052" summary="1.서버 초기화 로직 수정&#10;2.첫번째 로그 부분 시간 표시 하도록 수정">
+      <created>1557138414864</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1557138414864</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="pytest_in_unit_test_py - 2019.04.01 at 09h 08m 22s.xml">
+      <configuration name="pytest in unit_test.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_unit_test_py - 2019.04.01 at 09h 09m 14s.xml">
+      <configuration name="pytest in unit_test.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_unit_test_py - 2019.04.01 at 09h 09m 41s.xml">
+      <configuration name="pytest in unit_test.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_unit_test_py - 2019.04.01 at 09h 10m 38s.xml">
+      <configuration name="pytest in unit_test.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_unit_test_py - 2019.04.01 at 09h 11m 22s.xml">
+      <configuration name="pytest in unit_test.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_unit_test_py - 2019.04.01 at 09h 11m 41s.xml">
+      <configuration name="pytest in unit_test.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_unit_test_py - 2019.04.01 at 09h 12m 10s.xml">
+      <configuration name="pytest in unit_test.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_unit_test_py - 2019.04.01 at 09h 12m 17s.xml">
+      <configuration name="pytest in unit_test.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_unit_test_py - 2019.04.02 at 12h 37m 25s.xml">
+      <configuration name="pytest in unit_test.py" configurationId="tests" />
+    </history-entry>
+    <history-entry file="pytest_in_unit_test_py - 2019.04.02 at 12h 37m 52s.xml">
+      <configuration name="pytest in unit_test.py" configurationId="tests" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78101000" />
+    <option name="totallyTimeSpent" value="154812000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -527,57 +865,63 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="58" y="15" width="1236" height="742" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49620253" visible="true" weight="0.19731544" />
-      <window_info id="Structure" order="1" sideWeight="0.5037975" side_tool="true" weight="0.20711678" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4943609" visible="true" weight="0.28947368" />
+      <window_info id="Structure" order="1" sideWeight="0.5056391" side_tool="true" weight="0.16487935" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="0" weight="0.32976654" />
       <window_info anchor="bottom" id="Message" order="1" />
-      <window_info anchor="bottom" id="Find" order="2" weight="0.32907802" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.49731544" visible="true" weight="0.32340425" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.3462783" />
+      <window_info anchor="bottom" id="Find" order="2" weight="0.32843137" />
+      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.49661592" visible="true" weight="0.30491802" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.39836067" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="7" weight="0.32907802" />
-      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="9" weight="0.32765958" />
-      <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5026846" side_tool="true" weight="0.27801418" />
-      <window_info anchor="bottom" id="Terminal" order="12" weight="0.32765958" />
-      <window_info anchor="bottom" id="Python Console" order="13" weight="0.32907802" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32719547" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5033841" side_tool="true" weight="0.26554623" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3229508" />
+      <window_info anchor="bottom" id="Python Console" order="12" weight="0.32843137" />
+      <window_info anchor="bottom" id="TODO" order="13" weight="0.32954547" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" />
-      <window_info anchor="right" id="Database" order="4" />
+      <window_info anchor="right" id="SciView" order="3" weight="0.3297587" />
+      <window_info anchor="right" id="Database" order="4" weight="0.3277645" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="1.server(cmd)&#10;2.client(gui)" />
-    <MESSAGE value="1.exeMaker add(make py to exe)" />
-    <MESSAGE value="1.Client ui modified" />
-    <MESSAGE value="1.전체적인 ui 변경&#10;2.에러처리 로직 변경&#10;3.전체적인 로직 변경" />
-    <MESSAGE value="client &amp; server image file add" />
-    <MESSAGE value="1.logger add&#10;2.main file divide&#10;3.server config(args parser) add&#10;4.server class add" />
-    <MESSAGE value="1.file_size &amp; file_sign logic add&#10;2.client download directory check and make(if it is not exist)" />
-    <MESSAGE value="1.file list logic add (not include network function)&#10;2.client gui modified" />
-    <MESSAGE value="1.sever image upload&#10;2.server log logic modified" />
-    <MESSAGE value="1.using python 3.6.5 =&gt; 3.7 (stablization need)&#10;2.environment add (max os 10.14 mojave)" />
-    <MESSAGE value="1.example directory add&#10;2.async server class add" />
-    <MESSAGE value="1.server socket loop logic modified" />
-    <MESSAGE value="1.server file create and server files clean up&#10;2.client file clean up" />
-    <MESSAGE value="server log file add to the repository" />
-    <MESSAGE value="1.async socket io logic and async file io logic modified" />
-    <MESSAGE value="1.server request handler logic is in Editing" />
-    <MESSAGE value="1.request_handler logic erro modified" />
-    <MESSAGE value="1.clear request_handler.py" />
-    <MESSAGE value="io_handler function =&gt; loop_handler name modified" />
-    <option name="LAST_COMMIT_MESSAGE" value="io_handler function =&gt; loop_handler name modified" />
+    <MESSAGE value="유닛 테스트 로직 작성" />
+    <MESSAGE value="inser t전용 쿼리처리 함수 추가" />
+    <MESSAGE value="요청에대한 응답 객체 추가" />
+    <MESSAGE value="데이터 삽입 쿼리문 정상적으로 작동" />
+    <MESSAGE value="데이터 주고 받는 로직 다시 수정할것" />
+    <MESSAGE value="서버와 클라이언트가 주고 받는 데이터를 저장해둘 데이터 버퍼 객체 추가" />
+    <MESSAGE value="요청 핸들러 정상적으로 작동함&#10;요청 바인딩도 정상적으로 작동함" />
+    <MESSAGE value="클라이언트 이미지 정렬 부분 수정" />
+    <MESSAGE value="데이터 베이스 초기화 객체 추가" />
+    <MESSAGE value="byte 데이터 전송을 위한 데이터 인코딩, 디코딩 확인용 파일 추가" />
+    <MESSAGE value="바이트 데이터를 인코딩 한후 출력하도록 수정할것" />
+    <MESSAGE value="1.db_init method 추가" />
+    <MESSAGE value="주석에 처리과정 추가했음 해당 로직으로 수정할것&#10;1. 클라이언트가 서버에게 데이터를 보냄&#10;2. 서버가 클라이언트에게 다시 데이터를 보냄" />
+    <MESSAGE value="작동 쿼리들 추가할것" />
+    <MESSAGE value="결과를 받아야 하는 로직과 결과를 받지 않아도 되는 로직 추가할것" />
+    <MESSAGE value="데이터 처리 관계&#10;1. 요청 시작함을 알림&#10;2. 클라이언트로 부터 데이터를 받아옴 (+에러 처리)&#10;3. 클라이언트로 부터 받은 데이터를 요청 번호와 요청 데이터로 구분&#10;4. 데이터를 다시 전송함 (현재는 받은 데이터 그대로 전송 차후 수정)&#10;5. 요청을 완료함을 알림" />
+    <MESSAGE value="1.데이터 버퍼 클래스 추가&#10;2.데이터 암호화 추가" />
+    <MESSAGE value="1. 받은 데이터를 데이터 버퍼 객체에 넣어서 요청 핸들러에게 넘긴다" />
+    <MESSAGE value="받은 데이터를 데이터 버퍼에 넣은뒤 값을 처리함.&#10;데이터 버퍼만 데이터에 접근할수 있음&#10;데이터 버퍼에서 데이터를 넣고 요청 핸드러에서 받는 로직을 구현함" />
+    <MESSAGE value="1.데이터 버퍼를 통해 데이터를 관리하는것을 적용시킴&#10;2.EchoRequest 객체에만 로직을 적용함" />
+    <MESSAGE value="데이터 주고 받는 부분 try~catch 로직 수정함" />
+    <MESSAGE value="1.로그파일 이름 수정" />
+    <MESSAGE value="1.로그인 처리를 위한 4번 요청 로직 수정&#10;2.정상적으로 로그인 완료 (데이터 버퍼에 데이터 넣고 뺴기 가능)&#10;3.안드로이드와 소켓 통신 완료" />
+    <MESSAGE value="1.서버의 직관적이지 않은 로직 수정(ip표시 문제등)&#10;2.데이터 주고받는 순서는 (클라이언트-&gt;서버, 서버-&gt;클라이언트)과 같음&#10;3.자바와의 타입 차이 때문에 문자열로 true or false를 전송함(데이터 전송시에 그냥 문자열 그대로 넣은뒤 전송하면되도록 로직을 짬)&#10;4.자바의 map은 파이썬의 딕셔너리와 다르므로 문자열로 바꾼뒤 수정한다음 로직을 처리함." />
+    <MESSAGE value="1.서버 초기화 로직 수정&#10;2.첫번째 로그 부분 시간 표시 하도록 수정" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.서버 초기화 로직 수정&#10;2.첫번째 로그 부분 시간 표시 하도록 수정" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -590,21 +934,22 @@
       </default-breakpoints>
     </breakpoint-manager>
   </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/PyFileTransfer$client.coverage" NAME="client Coverage Results" MODIFIED="1556804098955" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/client" />
+    <SUITE FILE_PATH="coverage/PyFileTransfer$async_server_main.coverage" NAME="async_server_main Coverage Results" MODIFIED="1557138828573" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
+    <SUITE FILE_PATH="coverage/PyFileTransfer$encoding.coverage" NAME="encoding Coverage Results" MODIFIED="1554442656140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
+    <SUITE FILE_PATH="coverage/PyFileTransfer$request_handler.coverage" NAME="request_handler Coverage Results" MODIFIED="1554134647225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
+    <SUITE FILE_PATH="coverage/PyFileTransfer$data_buffer.coverage" NAME="data_buffer Coverage Results" MODIFIED="1555288443379" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
+    <SUITE FILE_PATH="coverage/PyFileTransfer$async_database.coverage" NAME="async_database Coverage Results" MODIFIED="1554201413758" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
+    <SUITE FILE_PATH="coverage/PyFileTransfer$gui_client.coverage" NAME="gui_client Coverage Results" MODIFIED="1554203512071" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/client" />
+    <SUITE FILE_PATH="coverage/PyFileTransfer$pytest_in_unit_test_py.coverage" NAME="pytest in unit_test.py Coverage Results" MODIFIED="1554176271504" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
+    <SUITE FILE_PATH="coverage/PyFileTransfer$async_server.coverage" NAME="async_server Coverage Results" MODIFIED="1554133160182" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
+    <SUITE FILE_PATH="coverage/PyFileTransfer$async_dummy_client.coverage" NAME="async_dummy_client Coverage Results" MODIFIED="1557129623408" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/client" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test.py" />
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/os.py" />
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/socket.py" />
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/io.py" />
     <entry file="file://$PROJECT_DIR$/abc.py" />
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python36/Lib/_collections_abc.py" />
     <entry file="file://$USER_HOME$/.PyCharm2018.3/system/python_stubs/6064702/PyQt5/QtWidgets/QAbstractButton.py" />
-    <entry file="file://$PROJECT_DIR$/client.spec">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/asyncio/base_events.py" />
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/asyncio/streams.py" />
     <entry file="file:///Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/asyncio/events.py" />
@@ -618,23 +963,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/example/dummy_client.py" />
     <entry file="file://$PROJECT_DIR$/example/file_server.log" />
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/file_server/main.py" />
-    <entry file="file://$PROJECT_DIR$/exeMaker.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="9" selection-start-line="1" selection-start-column="9" selection-end-line="1" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/Client.py" />
     <entry file="file://$PROJECT_DIR$/server/server.py" />
     <entry file="file://$PROJECT_DIR$/server/async_file_server.py" />
     <entry file="file://$PROJECT_DIR$/server/async_ftp_client.py" />
@@ -673,6 +1002,102 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/images.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/test.py" />
+    <entry file="file://$PROJECT_DIR$/server/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/asyncio/selector_events.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="849" selection-start-line="849" selection-end-line="849" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/response.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="27" lean-forward="true" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/async_file_transfer_client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/example/async_file_transfer_server.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client.spec">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/exeMaker.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="55" lean-forward="true" selection-start-line="8" selection-start-column="55" selection-end-line="8" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#10#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="136">
+            <caret line="8" column="6" lean-forward="true" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/site-packages/aiomysql/connection.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8279">
+          <caret line="526" column="26" selection-start-line="526" selection-start-column="26" selection-end-line="526" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/unit_test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/testServer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/encoding.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="7" selection-start-line="17" selection-start-column="7" selection-end-line="17" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/server/file_list.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
@@ -690,37 +1115,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/testServer.py">
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/selectors.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        <state relative-caret-position="121">
+          <caret line="322" selection-start-line="322" selection-end-line="322" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/images.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/gui_client.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="8" column="28" selection-start-line="8" selection-start-column="28" selection-end-line="8" selection-end-column="28" />
+        <state relative-caret-position="355">
+          <caret line="107" column="46" selection-start-line="107" selection-start-column="46" selection-end-line="107" selection-end-column="46" />
           <folding>
             <element signature="e#0#10#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/asyncio/base_events.py">
+    <entry file="file://$PROJECT_DIR$/client/client.py" />
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/asyncio/streams.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="1742" selection-start-line="1742" selection-end-line="1742" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/asyncio/events.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="87" selection-start-line="87" selection-end-line="87" />
+        <state relative-caret-position="121">
+          <caret line="76" selection-start-line="76" selection-end-line="76" />
         </state>
       </provider>
     </entry>
@@ -731,79 +1147,94 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/server_logger.py">
+    <entry file="file://$PROJECT_DIR$/client/async_dummy_client.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="-85">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/async_server_log.log">
-      <provider selected="true" editor-type-id="text-editor" />
-      <provider editor-type-id="LargeFileEditor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/test.py" />
-    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/asyncio/streams.py">
+    <entry file="file://$PROJECT_DIR$/server/async_database.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="619" selection-start-line="619" selection-end-line="619" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/async_server_main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-32">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="e#120#153#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/async_file_transfer_client.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/example/async_file_transfer_server.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+        <state relative-caret-position="228">
+          <caret line="48" selection-start-line="48" selection-end-line="48" />
           <folding>
             <element signature="e#0#14#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/request_handler.py">
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/asyncio/base_events.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="12" lean-forward="true" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="12" />
+        <state relative-caret-position="111">
+          <caret line="1741" selection-start-line="1741" selection-end-line="1741" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/asyncio/events.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="111">
+          <caret line="100" selection-start-line="100" selection-end-line="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/async_server_log.log">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="48" selection-start-line="18" selection-start-column="48" selection-end-line="19" selection-end-column="57" />
+        </state>
+      </provider>
+      <provider editor-type-id="LargeFileEditor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/server.log">
+      <provider selected="true" editor-type-id="LargeFileEditor">
+        <state relative-caret-position="-306" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/server_logger.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-323">
+          <caret line="75" column="38" selection-start-line="75" selection-start-column="38" selection-end-line="75" selection-end-column="38" />
           <folding>
-            <element signature="e#0#33#0" expanded="true" />
+            <element signature="e#0#13#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/async_server_main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="29" column="62" selection-start-line="29" selection-start-column="62" selection-end-line="30" />
+          <folding>
+            <element signature="e#120#153#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/data_buffer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-17">
+          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/async_server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="82" column="34" selection-start-line="82" selection-start-column="34" selection-end-line="82" selection-end-column="34" />
+        <state relative-caret-position="190">
+          <caret line="102" selection-start-line="102" selection-end-line="102" />
           <folding>
             <element signature="e#130#144#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/async_dummy_client.py">
+    <entry file="file://$PROJECT_DIR$/server/request_handler.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="9" column="16" selection-start-line="9" selection-start-column="16" selection-end-line="9" selection-end-column="16" />
+        <state relative-caret-position="122">
+          <caret line="91" column="30" selection-start-line="91" selection-start-column="30" selection-end-line="91" selection-end-column="30" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
