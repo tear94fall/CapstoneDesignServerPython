@@ -13,13 +13,14 @@ class RequestHandler:
 
     async def Request_Binding(self, request_number):
         result = None
+        request_number = int(request_number)
         # 요청 넘버는 2의 배수로 정한다
         if request_number == 2:
             echo = EchoRequest(self.data_buffer)
             result = await echo.main()
 
         elif request_number == 4:
-            select = DataSelectRequest()
+            select = LoginRequest(self.data_buffer)
             result = await select.main()
 
         elif request_number == 6:
@@ -46,20 +47,60 @@ class EchoRequest(RequestHandler):
 
     async def main(self):
         temp = self.data_buffer.get_data()
-        print("data_buffer data is " + temp)
-        test_query = "SELECT * FROM students;"
-        result = await query_operator(test_query)
-        return result
+        test_query = "SELECT * FROM member;"
+        try:
+            result = await query_operator(test_query)
+            return result
+        except:
+            result = None
+            return result
 
 
-class DataSelectRequest(RequestHandler):
-    def __init__(self):
-        super().__init__()
+class LoginRequest(RequestHandler):
+    def __init__(self, data_buffer: DataBuffer):
+        super().__init__(data_buffer)
 
     async def main(self):
-        select_query = "SELECT insert_date from students"
-        result = await query_operator(select_query)
-        return result
+        temp = self.data_buffer.get_data()
+        select_query = "SELECT * from member"
+
+        try:
+            result = await query_operator(select_query)
+            id = None
+            pw = None
+
+            temp = temp.replace("[", "", 1)
+            temp = temp.replace("]", "", 1)
+            temp = temp.replace(" ", "")
+            temp = temp.replace("'", "")
+            temp = temp.split(',')
+
+            for i in temp:
+                i = i.split('=')
+                if(i[0]=="user_id"):
+                    id = i[1]
+                if(i[0]=="user_pw"):
+                    pw = i[1]
+
+            db_id = None
+            db_pw = None
+
+            result = result[0]
+            db_id = result['id']
+            db_pw = result['passwd']
+
+            if(id==db_id):
+                if(pw==db_pw):
+                    result = "true"
+                else:
+                    result = "false"
+            else:
+                result = "false"
+
+            return result
+        except:
+            result = "false"
+            return result
 
 
 class CreateTableRequest(RequestHandler):
