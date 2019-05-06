@@ -12,14 +12,15 @@
 from server.async_server import *
 from server.server_logger import init_std_logger, init_f_logger
 from server.server_config import ArgsConfig
+import datetime
 
 if __name__ == '__main__':
-    description = "서버 작동"
+    description = "서버 로그" + datetime.datetime.now().strftime(" %Y-%m-%d %H:%M:%S") + " >> 서버 작동 시작"
     print(description)
 
     args = ArgsConfig.instance()
     args.add_argument('--port', type=int, default=8888)
-    args.add_argument('--ip', type=str, default='localhost')
+    args.add_argument('--ip', type=str, default='127.0.0.1')
     args.add_argument('--verbose', type=int, default=3)
 
     config = args.parse_args()
