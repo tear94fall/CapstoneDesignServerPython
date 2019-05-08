@@ -24,7 +24,7 @@ class RequestHandler:
             result = await select.main()
 
         elif request_number == 6:
-            create = CreateTableRequest()
+            create = CheckRegisterIdRequest(self.data_buffer)
             result = await create.main()
 
         elif request_number == 8:
@@ -62,10 +62,11 @@ class LoginRequest(RequestHandler):
 
     async def main(self):
         temp = self.data_buffer.get_data()
-        select_query = "SELECT * from member"
+        table_name = "member"
+        login_query = "select * from" + " " + table_name
 
         try:
-            result = await query_operator(select_query)
+            result = await query_operator(login_query)
             id = None
             pw = None
 
@@ -77,9 +78,9 @@ class LoginRequest(RequestHandler):
 
             for i in temp:
                 i = i.split('=')
-                if(i[0]=="user_id"):
+                if (i[0] == "user_id"):
                     id = i[1]
-                if(i[0]=="user_pw"):
+                if (i[0] == "user_pw"):
                     pw = i[1]
 
             db_id = None
@@ -89,8 +90,8 @@ class LoginRequest(RequestHandler):
                 db_id = i['id']
                 db_pw = i['passwd']
 
-                if(id==db_id):
-                    if(pw==db_pw):
+                if (id == db_id):
+                    if (pw == db_pw):
                         result = "true"
                         return result
                     else:
@@ -104,11 +105,53 @@ class LoginRequest(RequestHandler):
             return result
 
 
-class CreateTableRequest(RequestHandler):
-    def __init__(self):
-        super().__init__()
+class CheckRegisterIdRequest(RequestHandler):
+    def __init__(self, data_buffer: DataBuffer):
+        super().__init__(data_buffer)
 
     async def main(self):
+        temp = self.data_buffer.get_data()
+        table_name = "member"
+        get_all_id_query = "select id from" + " " + table_name
+
+        try:
+            result = await query_operator(get_all_id_query)
+            id = None
+
+            temp = temp.replace("[", "", 1)
+            temp = temp.replace("]", "", 1)
+            temp = temp.replace(" ", "")
+            temp = temp.replace("'", "")
+            temp = temp.split(',')
+
+            for i in temp:
+                i = i.split('=')
+                if (i[0] == "user_id"):
+                    id = i[1]
+
+            db_id = None
+
+            for i in result:
+                db_id = i['id']
+                if (id == db_id):
+                    result = "true"
+                    return result
+                else:
+                    result = "false"
+
+            return result
+        except:
+            result = "false"
+            return result
+
+
+# 테이블 생성을 위한 요청
+class CreateTableRequest(RequestHandler):
+    def __init__(self, data_buffer: DataBuffer):
+        super().__init__(data_buffer)
+
+    async def main(self):
+        temp = self.data_buffer.get_data()
         table_create_query = "CREATE TABLE person " \
                              "( _id INT AUTO_INCREMENT, name VARCHAR(32) NOT NULL, " \
                              "belong VARCHAR(12) DEFAULT 'FOO', " \
