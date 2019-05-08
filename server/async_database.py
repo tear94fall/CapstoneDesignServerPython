@@ -27,14 +27,19 @@ class DataBaseInIt:
 
 # insert 전용
 async def test_example_execute(query: str):
-    conn = await aiomysql.connect(host='127.0.0.1', port=3306,
+    try:
+        conn = await aiomysql.connect(host='127.0.0.1', port=3306,
                                        user='root', password='root1234', db='test', loop=loop)
-    cur = await conn.cursor()
-    result = await cur.execute(query)
-    await conn.commit()
+        cur = await conn.cursor()
+        result = await cur.execute(query)
+        await conn.commit()
 
-    conn.close()
-    return result
+        conn.close()
+        result = "true"
+        return result
+    except:
+        result = "false"
+        return result
 
 
 # 나머지 쿼리
@@ -54,7 +59,6 @@ test_query2 = "SELECT * from students"
 test_query3 = "SELECT * from person"
 
 
-data_insert_query = "INSERT INTO person (name, belong, phone) VALUES('유재석', 'IDE','01112345678')"
-
+data_insert_query = "INSERT INTO test.person (userid, passwd) VALUES('ttttt', '1234');"
 
 # loop.run_until_complete(query_operator(loop, test_query3))
