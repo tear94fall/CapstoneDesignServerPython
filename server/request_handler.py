@@ -28,7 +28,7 @@ class RequestHandler:
             result = await create.main()
 
         elif request_number == 8:
-            insert = DataInsertRequest()
+            insert = CreateNewAccount(self.data_buffer)
             result = await insert.main()
 
         return result
@@ -143,6 +143,61 @@ class CheckRegisterIdRequest(RequestHandler):
         except:
             result = "false"
             return result
+
+
+# 새로운 계정 생성 하는 객체
+class CreateNewAccount(RequestHandler):
+    def __init__(self, data_buffer: DataBuffer):
+        super().__init__(data_buffer)
+
+    async def main(self):
+        temp = self.data_buffer.get_data()
+
+        try:
+            id = None
+            passwd = None
+            name = None
+            tel = None
+
+            temp = temp.replace("[", "", 1)
+            temp = temp.replace("]", "", 1)
+            temp = temp.replace(" ", "")
+            temp = temp.replace("'", "")
+            temp = temp.split(',')
+
+            for i in temp:
+                i = i.split('=')
+                if (i[0] == "user_id"):
+                    id = i[1]
+                if (i[0] == "user_pw"):
+                    passwd = i[1]
+                if (i[0] == "user_name"):
+                    name = i[1]
+                if (i[0] == "user_tel"):
+                    tel = i[1]
+
+            create_new_account_query = "INSERT INTO member (id, passwd, name, tel) VALUES('" + str(id) + "', '" + str(passwd) + "', '" + str(name) + "', '" + str(tel) + "');"
+
+            '''
+            name = "asdfasdf"
+            pw = "asdfadf"
+            data_insert_query = "INSERT INTO person (userid, passwd) VALUES('" + str(name) + "', '" + str(pw) + "');"
+            '''
+
+            try:
+                result = await test_example_execute(create_new_account_query)
+                return result
+            except:
+                result = "false"
+                return result
+            result = "true"
+            return result
+        except:
+            result = "false"
+            return result
+
+
+
 
 
 # 테이블 생성을 위한 요청
