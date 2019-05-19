@@ -90,6 +90,8 @@ class Server:
             str_data = str_data.replace(" ", "")
             str_data = str_data.split(',')
 
+            a_log('데이터 송신. 송신 내용 <{0}>. 요청 클라이언트 {1}'.format(str_data, client_ip_addr), L_CRITICAL_EVENT)
+
             for i in str_data:
                 i = i.split('=')
                 if i[0] == "request_number":
@@ -100,7 +102,7 @@ class Server:
 
             requestHandler = RequestHandler(data_buffer)
             result = await requestHandler.Request_Binding(int(request_number))
-
+            result = str(result)
             # 데이터를 보냄
             writer.write(result.encode())
 
