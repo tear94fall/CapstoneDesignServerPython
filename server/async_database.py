@@ -13,8 +13,6 @@ def num_to_change_attribute(_attribute=None):
         # 추가되는 컬럼은 추가
     }.get(_column, "No selected!")
 
-loop = asyncio.get_event_loop()
-
 
 class DataBaseInIt:
     def __init__(self):
@@ -52,13 +50,3 @@ def query_operator(query: str):
     tuple = yield from cursor.fetchall()
     conn.close()
     return tuple
-
-
-test_query = "CREATE TABLE dept (dept_no INT(11) unsigned NOT NULL,dept_name VARCHAR(32) NOT NULL,PRIMARY KEY (dept_no))"
-test_query2 = "SELECT * from students"
-test_query3 = "SELECT * from person"
-
-
-data_insert_query = "INSERT INTO test.person (userid, passwd) VALUES('ttttt', '1234');"
-
-# loop.run_until_complete(query_operator(loop, test_query3))
