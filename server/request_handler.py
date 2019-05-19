@@ -4,6 +4,8 @@ from asyncio import StreamReader, StreamWriter
 from server.async_database import *
 import aiomysql
 from server.data_buffer import DataBuffer
+import random
+import datetime
 
 
 class RequestHandler:
@@ -31,6 +33,14 @@ class RequestHandler:
             insert = CreateNewAccount(self.data_buffer)
             result = await insert.main()
 
+        elif request_number == 10:
+            insert = GetCaptchaTestSet(self.data_buffer)
+            result = await insert.main()
+
+        elif request_number == 12:
+            insert = GetLastDriveDate(self.data_buffer)
+            result = await insert.main()
+
         return result
 
 
@@ -54,6 +64,23 @@ class EchoRequest(RequestHandler):
         except:
             result = None
             return result
+
+
+# 사용하지 않는다
+# 테이블 생성을 위한 요청
+class CreateTableRequest(RequestHandler):
+    def __init__(self, data_buffer: DataBuffer):
+        super().__init__(data_buffer)
+
+    async def main(self):
+        temp = self.data_buffer.get_data()
+        table_create_query = "CREATE TABLE person " \
+                             "( _id INT AUTO_INCREMENT, name VARCHAR(32) NOT NULL, " \
+                             "belong VARCHAR(12) DEFAULT 'FOO', " \
+                             "phone VARCHAR(12), PRIMARY KEY(_id) ) " \
+                             "ENGINE=INNODB"
+        result = await query_operator(table_create_query)
+        return result
 
 
 class LoginRequest(RequestHandler):
@@ -176,7 +203,9 @@ class CreateNewAccount(RequestHandler):
                 if (i[0] == "user_tel"):
                     tel = i[1]
 
-            create_new_account_query = "INSERT INTO member (id, passwd, name, tel) VALUES('" + str(id) + "', '" + str(passwd) + "', '" + str(name) + "', '" + str(tel) + "');"
+            current_time = (datetime.datetime.now()).strftime('%y/%m/%d %H:%M:%S')
+            create_new_account_query = "INSERT INTO member (id, passwd, name, tel, last_drive_date) " \
+                                       "VALUES('" + str(id) + "', '" + str(passwd) + "', '" + str(name) + "', '" + str(tel) + "', '" + current_time + "');"
 
             '''
             name = "asdfasdf"
@@ -197,31 +226,71 @@ class CreateNewAccount(RequestHandler):
             return result
 
 
-
-
-
-# 테이블 생성을 위한 요청
-class CreateTableRequest(RequestHandler):
+# 캡차 문제와 정답을 가져오는 클래스
+class GetCaptchaTestSet(RequestHandler):
     def __init__(self, data_buffer: DataBuffer):
         super().__init__(data_buffer)
 
     async def main(self):
         temp = self.data_buffer.get_data()
-        table_create_query = "CREATE TABLE person " \
-                             "( _id INT AUTO_INCREMENT, name VARCHAR(32) NOT NULL, " \
-                             "belong VARCHAR(12) DEFAULT 'FOO', " \
-                             "phone VARCHAR(12), PRIMARY KEY(_id) ) " \
-                             "ENGINE=INNODB"
-        result = await query_operator(table_create_query)
-        return result
+
+        try:
+            # 캡챠 문제는 늘릴것 현재는 3번 문제까지 있음
+            answer = ""
+            test_set_num = random.randrange(1, 100)
+            test_set_num %= 10
+
+            check_captcha_answer_query = "SELECT * FROM captcha;"
+
+            try:
+                result = await query_operator(check_captcha_answer_query)
+
+                for i in result:
+                    if int(i['captcha_num']) == test_set_num:
+                        answer = i['captcha_answer']
+            except:
+                result = "false"
+                return result
+
+            return answer
+        except:
+            result = "false"
+            return result
 
 
-class DataInsertRequest(RequestHandler):
-    def __init__(self):
-        super().__init__()
+# 마지막 운전 날짜를 가져오는 클래스
+class GetLastDriveDate(RequestHandler):
+    def __init__(self, data_buffer: DataBuffer):
+        super().__init__(data_buffer)
 
     async def main(self):
-        data_insert_query = "INSERT INTO person (name, belong, phone) VALUES('유재석', 'IDE','01112345678')"
+        temp = self.data_buffer.get_data()
 
-        result = await test_example_execute(data_insert_query)
-        return result
+        id=None
+
+        temp = temp.replace("[", "", 1)
+        temp = temp.replace("]", "", 1)
+        temp = temp.replace(" ", "")
+        temp = temp.replace("'", "")
+        temp = temp.split(',')
+
+        for i in temp:
+            i = i.split('=')
+        if (i[0] == "user_id"):
+            id = i[1]
+
+        try:
+            query = "SELECT last_drive_date FROM member where id='root';"
+
+            try:
+                result = await query_operator(query)
+                result = result[0]
+                result = result.get('last_drive_date')
+                return result
+            except:
+                result = "false"
+                return result
+        except:
+            result = "false"
+            return result
+
