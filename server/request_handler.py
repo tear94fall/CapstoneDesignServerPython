@@ -41,6 +41,11 @@ class RequestHandler:
             insert = GetLastDriveDate(self.data_buffer)
             result = await insert.main()
 
+        elif request_number == 14:
+            insert = GetCaptchaTestSet2(self.data_buffer)
+            result = await insert.main()
+
+
         return result
 
 
@@ -226,6 +231,7 @@ class CreateNewAccount(RequestHandler):
             return result
 
 
+# 10
 # 캡차 문제와 정답을 가져오는 클래스
 class GetCaptchaTestSet(RequestHandler):
     def __init__(self, data_buffer: DataBuffer):
@@ -238,26 +244,29 @@ class GetCaptchaTestSet(RequestHandler):
             # 캡챠 문제는 늘릴것 현재는 3번 문제까지 있음
             answer = ""
             test_set_num = random.randrange(1, 100)
-            test_set_num %= 10
+            test_set_num %= 9
+            # 디비는 1번 부터 시작하므로, +1을 해줘야함
+            test_set_num += 1
 
-            check_captcha_answer_query = "SELECT * FROM captcha;"
+            check_captcha_answer_query = "SELECT captcha_answer FROM captcha where captcha_num=" + "'" + str(test_set_num) + "';"
 
             try:
                 result = await query_operator(check_captcha_answer_query)
+                result = result[0]
+                result = result.get('captcha_answer')
 
-                for i in result:
-                    if int(i['captcha_num']) == test_set_num:
-                        answer = i['captcha_answer']
+                return result
             except:
                 result = "false"
                 return result
 
-            return answer
+            return result
         except:
             result = "false"
             return result
 
 
+# 12
 # 마지막 운전 날짜를 가져오는 클래스
 class GetLastDriveDate(RequestHandler):
     def __init__(self, data_buffer: DataBuffer):
@@ -266,7 +275,7 @@ class GetLastDriveDate(RequestHandler):
     async def main(self):
         temp = self.data_buffer.get_data()
 
-        id=None
+        user_id=None
 
         temp = temp.replace("[", "", 1)
         temp = temp.replace("]", "", 1)
@@ -277,10 +286,10 @@ class GetLastDriveDate(RequestHandler):
         for i in temp:
             i = i.split('=')
         if (i[0] == "user_id"):
-            id = i[1]
+            user_id = i[1]
 
         try:
-            query = "SELECT last_drive_date FROM member where id='root';"
+            query = "SELECT last_drive_date FROM member where id="+"'"+user_id + "';"
 
             try:
                 result = await query_operator(query)
@@ -294,3 +303,49 @@ class GetLastDriveDate(RequestHandler):
             result = "false"
             return result
 
+
+# 14
+# 캡차 문제와 정답을 가져오는 클래스
+class GetCaptchaTestSet2(RequestHandler):
+    def __init__(self, data_buffer: DataBuffer):
+        super().__init__(data_buffer)
+
+    async def main(self):
+        temp = self.data_buffer.get_data()
+
+        try:
+            captcha2_number = None
+            captcha2_answer = None
+
+            temp = temp.replace("[", "", 1)
+            temp = temp.replace("]", "", 1)
+            temp = temp.replace(" ", "")
+            temp = temp.replace("'", "")
+            temp = temp.split(',')
+
+            for i in temp:
+                i = i.split('=')
+                if (i[0] == "captcha2_number"):
+                    captcha2_number = i[1]
+                if (i[0] == "captcha2_answer"):
+                    captcha2_answer = i[1]
+
+            # check_captcha_answer_query = "SELECT captcha_answer FROM captcha2 where captcha_num=captcha2_number ;"
+            check_captcha_answer_query = "SELECT captcha_answer FROM captcha2 where captcha_num="+"'"+captcha2_number +"';"
+            try:
+                result = await query_operator(check_captcha_answer_query)
+                result = result[0]
+                result = result.get('captcha_answer')
+
+                if captcha2_answer == result:
+                    result = "true"
+                    return result
+                else:
+                    result = "false"
+                    return result
+            except:
+                result = "false"
+                return result
+        except:
+            result = "false"
+            return result
