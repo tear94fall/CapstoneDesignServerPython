@@ -1,6 +1,9 @@
 import asyncio
 import aiomysql
 
+# 절대 지우지 말것
+loop = asyncio.get_event_loop()
+
 
 def num_to_change_attribute(_attribute=None):
     if not _attribute:
