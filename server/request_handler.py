@@ -45,6 +45,17 @@ class RequestHandler:
             insert = GetCaptchaTestSet2(self.data_buffer)
             result = await insert.main()
 
+        elif request_number == 16:
+            insert = GetUserInfo(self.data_buffer)
+            result = await insert.main()
+
+        elif request_number == 18:
+            insert = GetAllUserInfo(self.data_buffer)
+            result = await insert.main()
+
+        elif request_number == 20:
+            insert = UpdateUserInfo(self.data_buffer)
+            result = await insert.main()
 
         return result
 
@@ -295,6 +306,34 @@ class GetLastDriveDate(RequestHandler):
                 result = await query_operator(query)
                 result = result[0]
                 result = result.get('last_drive_date')
+
+                result = result.split(" ")
+                temp1 = result[0]
+                temp2 = result[1]
+
+                temp1 = temp1.split("/")
+                temp2 = temp2.split(":")
+
+                ''' 마지막 접속 날짜 '''
+                year = int("20" + temp1[0])
+                month = int(temp1[1])
+                day = int(temp1[2])
+
+                ''' 현재 날짜 '''
+                now = datetime.datetime.today()
+                now = str(now).split()
+                now = str(now[0]).split("-")
+
+                now_year = int(now[0])
+                now_month = int(now[1])
+                now_day = int(now[2])
+
+                ''' 날짜 연산 시작  '''
+                last_access_date = datetime.date(year, month, day)
+                now_date = datetime.date(now_year, now_month, now_day)
+                delta = now_date - last_access_date
+
+                result = str(delta.days)
                 return result
             except:
                 result = "false"
@@ -336,8 +375,163 @@ class GetCaptchaTestSet2(RequestHandler):
                 result = await query_operator(check_captcha_answer_query)
                 result = result[0]
                 result = result.get('captcha_answer')
+                # 대문자로 입력했을 경우 소문자로 바꿔준다.
+
+                captcha2_answer = captcha2_answer.lower()
 
                 if captcha2_answer == result:
+                    result = "true"
+                    return result
+                else:
+                    result = "false"
+                    return result
+            except:
+                result = "false"
+                return result
+        except:
+            result = "false"
+            return result
+
+
+# 16
+# 운전 정보를 넘겨주는 클래스
+class GetUserInfo(RequestHandler):
+    def __init__(self, data_buffer: DataBuffer):
+        super().__init__(data_buffer)
+
+    async def main(self):
+        temp = self.data_buffer.get_data()
+
+        try:
+            userid = None
+
+            temp = temp.replace("[", "", 1)
+            temp = temp.replace("]", "", 1)
+            temp = temp.replace(" ", "")
+            temp = temp.replace("'", "")
+            temp = temp.split(',')
+
+            for i in temp:
+                i = i.split('=')
+                if (i[0] == "userid"):
+                    userid = i[1]
+
+            get_userinfo_query="SELECT * FROM MEMBER WHERE id="+"'"+ userid +"';"
+
+            try:
+                qeury_result = await query_operator(get_userinfo_query)
+                qeury_result = qeury_result[0]
+
+                result = ""
+
+                # 드라이브 횟수, 졸음운전 감지 횟수, 음주운전 감지 횟수, 마지막 운전 날짜
+                result += str(str(qeury_result.get('drive_cnt'))+"-")
+                result += str(str(qeury_result.get('sleep_detect_cnt'))+"-")
+                result += str(str(qeury_result.get('alcohol_detect_cnt'))+"-")
+
+                last_drive_date = str(str(qeury_result.get('last_drive_date')))
+                last_drive_date = last_drive_date.split(" ")
+                result += last_drive_date[0]
+
+                return result
+            except:
+                result = "false"
+                return result
+        except:
+            result = "false"
+            return result
+
+
+# 18
+# 사용자의 모든 정보를 넘겨주는 클래스
+class GetAllUserInfo(RequestHandler):
+    def __init__(self, data_buffer: DataBuffer):
+        super().__init__(data_buffer)
+
+    async def main(self):
+        temp = self.data_buffer.get_data()
+
+        try:
+            userid = None
+
+            temp = temp.replace("[", "", 1)
+            temp = temp.replace("]", "", 1)
+            temp = temp.replace(" ", "")
+            temp = temp.replace("'", "")
+            temp = temp.split(',')
+
+            for i in temp:
+                i = i.split('=')
+                if (i[0] == "userid"):
+                    userid = i[1]
+
+            get_all_userinfo_query="SELECT * FROM MEMBER WHERE id="+"'" + userid + "';"
+
+            try:
+                qeury_result = await query_operator(get_all_userinfo_query)
+                qeury_result = qeury_result[0]
+
+                result = ""
+
+                # 드라이브 횟수, 졸음운전 감지 횟수, 음주운전 감지 횟수, 마지막 운전 날짜
+                result += str(str(qeury_result.get('id'))+"-")
+                result += str(str(qeury_result.get('passwd'))+"-")
+                result += str(str(qeury_result.get('name'))+"-")
+                result += str(str(qeury_result.get('tel'))+"-")
+
+                return result
+            except:
+                result = "false"
+                return result
+        except:
+            result = "false"
+            return result
+
+
+# 20
+# 사용자 정보를 업데이트 하는 클래스
+class UpdateUserInfo(RequestHandler):
+    def __init__(self, data_buffer: DataBuffer):
+        super().__init__(data_buffer)
+
+    async def main(self):
+        temp = self.data_buffer.get_data()
+
+        try:
+            userid = None
+            userpassword = None
+            username = None
+            usertel = None
+
+            temp = temp.replace("[", "", 1)
+            temp = temp.replace("]", "", 1)
+            temp = temp.replace(" ", "")
+            temp = temp.replace("'", "")
+            temp = temp.split(',')
+
+            for i in temp:
+                i = i.split('=')
+                if (i[0] == "userid"):
+                    userid = i[1]
+                if (i[0] == "userpassword"):
+                    userpassword = i[1]
+                if (i[0] == "username"):
+                    username = i[1]
+                if (i[0] == "usertel"):
+                    usertel = i[1]
+
+            get_primary_key ="SELECT * FROM MEMBER WHERE id="+"'" + userid + "';"
+
+            primary_key = None
+            try:
+                primary_key = await query_operator(get_primary_key)
+                primary_key = primary_key[0]
+                primary_key = int(primary_key.get('index'))
+
+                update_userinfo_query = "UPDATE member SET `passwd` = "+"'" + str(userpassword) + "'" + " , `name` = "+"'" + str(username) + "'" + " , `tel` = " + "'" + str(usertel) + "'" + " WHERE (`index` = " + "'" + str(primary_key) + "');"
+                qeury_result = await update_execute(update_userinfo_query)
+
+                if qeury_result:
                     result = "true"
                     return result
                 else:
