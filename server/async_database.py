@@ -26,6 +26,25 @@ class DataBaseInIt:
                                        user='root', password='root1234', db='test', loop=loop)
 
 
+# update 전용 함수
+async def update_execute(query: str):
+    try:
+        conn = await aiomysql.connect(host='127.0.0.1', port=3306,
+                                       user='root', password='root1234',
+                                       db='test', loop=loop)
+
+        cur = await conn.cursor()
+        async with conn.cursor() as cur:
+            await cur.execute(query)
+            await conn.commit()
+
+        conn.close()
+        result = "true"
+        return result
+    except:
+        result = "false"
+        return result
+
 # insert 전용
 async def test_example_execute(query: str):
     try:
