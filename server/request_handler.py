@@ -16,7 +16,12 @@ class RequestHandler:
     async def Request_Binding(self, request_number):
         result = None
         request_number = int(request_number)
+
+        # 0번 요청은 사용하지 않는다.
         # 요청 넘버는 2의 배수로 정한다
+        if request_number == 0:
+            pass
+
         if request_number == 2:
             echo = EchoRequest(self.data_buffer)
             result = await echo.main()
@@ -57,6 +62,14 @@ class RequestHandler:
             insert = UpdateUserInfo(self.data_buffer)
             result = await insert.main()
 
+        elif request_number == 22:
+            insert = UpdateLastDriveDate(self.data_buffer)
+            result = await insert.main()
+
+        elif request_number == 24:
+            insert = UpdateAlcoholCount(self.data_buffer)
+            result = await insert.main()
+
         return result
 
 
@@ -67,22 +80,7 @@ class RequestHandler:
 '''
 
 
-class EchoRequest(RequestHandler):
-    def __init__(self, data_buffer: DataBuffer):
-        super().__init__(data_buffer)
-
-    async def main(self):
-        temp = self.data_buffer.get_data()
-        test_query = "SELECT * FROM member;"
-        try:
-            result = await query_operator(test_query)
-            return result
-        except:
-            result = None
-            return result
-
-
-# 사용하지 않는다
+# 0번 요청으로 사용하지 않는다
 # 테이블 생성을 위한 요청
 class CreateTableRequest(RequestHandler):
     def __init__(self, data_buffer: DataBuffer):
@@ -99,6 +97,27 @@ class CreateTableRequest(RequestHandler):
         return result
 
 
+# 2번 요청
+# 에코 요청으로, 받은 데이터를 그대로 보내준다.
+class EchoRequest(RequestHandler):
+    def __init__(self, data_buffer: DataBuffer):
+        super().__init__(data_buffer)
+
+    async def main(self):
+        try:
+            result = self.data_buffer.get_data()
+            if result:
+                return result
+            else:
+                result = "false"
+                return result
+        except:
+            result = "false"
+            return result
+
+
+# 4번 요청
+# 로그인 요청
 class LoginRequest(RequestHandler):
     def __init__(self, data_buffer: DataBuffer):
         super().__init__(data_buffer)
@@ -148,6 +167,8 @@ class LoginRequest(RequestHandler):
             return result
 
 
+# 6번 요청
+# 회원가입시에 아이디 중복 검사를 위한 클래스
 class CheckRegisterIdRequest(RequestHandler):
     def __init__(self, data_buffer: DataBuffer):
         super().__init__(data_buffer)
@@ -188,6 +209,7 @@ class CheckRegisterIdRequest(RequestHandler):
             return result
 
 
+# 8번 요청
 # 새로운 계정 생성 하는 객체
 class CreateNewAccount(RequestHandler):
     def __init__(self, data_buffer: DataBuffer):
@@ -219,7 +241,7 @@ class CreateNewAccount(RequestHandler):
                 if (i[0] == "user_tel"):
                     tel = i[1]
 
-            current_time = (datetime.datetime.now()).strftime('%y/%m/%d %H:%M:%S')
+            current_time = (datetime.datetime.now()).strftime('%y-%m-%d')
             create_new_account_query = "INSERT INTO member (id, passwd, name, tel, last_drive_date) " \
                                        "VALUES('" + str(id) + "', '" + str(passwd) + "', '" + str(name) + "', '" + str(tel) + "', '" + current_time + "');"
 
@@ -242,7 +264,7 @@ class CreateNewAccount(RequestHandler):
             return result
 
 
-# 10
+# 10번 요청
 # 캡차 문제와 정답을 가져오는 클래스
 class GetCaptchaTestSet(RequestHandler):
     def __init__(self, data_buffer: DataBuffer):
@@ -277,7 +299,7 @@ class GetCaptchaTestSet(RequestHandler):
             return result
 
 
-# 12
+# 12번 요청
 # 마지막 운전 날짜를 가져오는 클래스
 class GetLastDriveDate(RequestHandler):
     def __init__(self, data_buffer: DataBuffer):
@@ -307,15 +329,16 @@ class GetLastDriveDate(RequestHandler):
                 result = result[0]
                 result = result.get('last_drive_date')
 
-                result = result.split(" ")
-                temp1 = result[0]
-                temp2 = result[1]
+                # result = result.split(" ")
+                # temp1 = result[0]
+                temp1 = str(result)
+                # temp2 = result[1]
 
-                temp1 = temp1.split("/")
-                temp2 = temp2.split(":")
+                temp1 = temp1.split("-")
+                # temp2 = temp2.split(":")
 
                 ''' 마지막 접속 날짜 '''
-                year = int("20" + temp1[0])
+                year = int(temp1[0])
                 month = int(temp1[1])
                 day = int(temp1[2])
 
@@ -343,7 +366,7 @@ class GetLastDriveDate(RequestHandler):
             return result
 
 
-# 14
+# 14번 요청
 # 캡차 문제와 정답을 가져오는 클래스
 class GetCaptchaTestSet2(RequestHandler):
     def __init__(self, data_buffer: DataBuffer):
@@ -393,7 +416,7 @@ class GetCaptchaTestSet2(RequestHandler):
             return result
 
 
-# 16
+# 16번 요청
 # 운전 정보를 넘겨주는 클래스
 class GetUserInfo(RequestHandler):
     def __init__(self, data_buffer: DataBuffer):
@@ -431,7 +454,8 @@ class GetUserInfo(RequestHandler):
 
                 last_drive_date = str(str(qeury_result.get('last_drive_date')))
                 last_drive_date = last_drive_date.split(" ")
-                result += last_drive_date[0]
+                last_drive_date = last_drive_date[0]
+                result += last_drive_date.replace("-", "/")
 
                 return result
             except:
@@ -442,7 +466,7 @@ class GetUserInfo(RequestHandler):
             return result
 
 
-# 18
+# 18번 요청
 # 사용자의 모든 정보를 넘겨주는 클래스
 class GetAllUserInfo(RequestHandler):
     def __init__(self, data_buffer: DataBuffer):
@@ -488,7 +512,7 @@ class GetAllUserInfo(RequestHandler):
             return result
 
 
-# 20
+# 20번 요청
 # 사용자 정보를 업데이트 하는 클래스
 class UpdateUserInfo(RequestHandler):
     def __init__(self, data_buffer: DataBuffer):
@@ -529,6 +553,115 @@ class UpdateUserInfo(RequestHandler):
                 primary_key = int(primary_key.get('index'))
 
                 update_userinfo_query = "UPDATE member SET `passwd` = "+"'" + str(userpassword) + "'" + " , `name` = "+"'" + str(username) + "'" + " , `tel` = " + "'" + str(usertel) + "'" + " WHERE (`index` = " + "'" + str(primary_key) + "');"
+                qeury_result = await update_execute(update_userinfo_query)
+
+                if qeury_result:
+                    result = "true"
+                    return result
+                else:
+                    result = "false"
+                    return result
+            except:
+                result = "false"
+                return result
+        except:
+            result = "false"
+            return result
+
+
+# 22번 요청
+# 마지막 운전 날짜를 업데이트 하는 함수
+class UpdateLastDriveDate(RequestHandler):
+    def __init__(self, data_buffer: DataBuffer):
+        super().__init__(data_buffer)
+
+    async def main(self):
+        temp = self.data_buffer.get_data()
+
+        try:
+            userid = None
+
+            temp = temp.replace("[", "", 1)
+            temp = temp.replace("]", "", 1)
+            temp = temp.replace(" ", "")
+            temp = temp.replace("'", "")
+            temp = temp.split(',')
+
+            for i in temp:
+                i = i.split('=')
+                if (i[0] == "userid"):
+                    userid = i[1]
+
+            get_primary_key ="SELECT * FROM MEMBER WHERE id="+"'" + userid + "';"
+
+            primary_key = None
+            try:
+                primary_key = await query_operator(get_primary_key)
+                temp_result = primary_key
+                primary_key = primary_key[0]
+                primary_key = int(primary_key.get('index'))
+
+                temp_result = temp_result[0]
+                drive_cnt = int(temp_result.get('drive_cnt'))
+                drive_cnt += 1
+
+                new_last_drive_date = (datetime.datetime.now()).strftime('%y-%m-%d')
+
+                update_userinfo_query = "UPDATE member SET `drive_cnt` = "+"'" + str(drive_cnt) + "'" + " , `last_drive_date` = "+"'" + str(new_last_drive_date) + "'" + " WHERE (`index` = " + "'" + str(primary_key) + "');"
+                qeury_result = await update_execute(update_userinfo_query)
+
+                if qeury_result:
+                    result = "true"
+                    return result
+                else:
+                    result = "false"
+                    return result
+            except:
+                result = "false"
+                return result
+        except:
+            result = "false"
+            return result
+
+
+# 24번 요청
+# 테스트 실패시에 음주운전 횟수 1회 증가 시킴
+class UpdateAlcoholCount(RequestHandler):
+    def __init__(self, data_buffer: DataBuffer):
+        super().__init__(data_buffer)
+
+    async def main(self):
+        temp = self.data_buffer.get_data()
+
+        try:
+            userid = None
+
+            temp = temp.replace("[", "", 1)
+            temp = temp.replace("]", "", 1)
+            temp = temp.replace(" ", "")
+            temp = temp.replace("'", "")
+            temp = temp.split(',')
+
+            for i in temp:
+                i = i.split('=')
+                if (i[0] == "userid"):
+                    userid = i[1]
+
+            get_primary_key ="SELECT * FROM MEMBER WHERE id="+"'" + userid + "';"
+
+            primary_key = None
+            try:
+                primary_key = await query_operator(get_primary_key)
+                temp_result = primary_key
+                primary_key = primary_key[0]
+                primary_key = int(primary_key.get('index'))
+
+                temp_result = temp_result[0]
+                alcohol_detect_count = int(temp_result.get('alcohol_detect_cnt'))
+                alcohol_detect_count += 1
+
+                 # update_userinfo_query = "UPDATE member SET `alcohol_detect_cnt` = "+"'" + str(alcohol_detect_count) + "'" + " WHERE (`index` = " + "'" + str(primary_key) + "');"
+                update_userinfo_query = "UPDATE `test`.`member` SET `alcohol_detect_cnt` = '" + str(alcohol_detect_count) + "' WHERE(`index` = '" + str(primary_key) + "');"
                 qeury_result = await update_execute(update_userinfo_query)
 
                 if qeury_result:
