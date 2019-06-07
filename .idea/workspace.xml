@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5490af6c-48a8-4c49-8a75-29386717e238" name="Default Changelist" comment="">
+    <list default="true" id="5490af6c-48a8-4c49-8a75-29386717e238" name="Default Changelist" comment="1. 졸음운전 횟수 업데이트 하는 로직 추가&#10;2. 운전 횟수 업데이트 하는 로직추가">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/async_dummy_client.py" beforeDir="false" afterPath="$PROJECT_DIR$/client/async_dummy_client.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/request_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/request_handler.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -49,7 +47,20 @@
     <select />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/async_server_main.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" selection-start-line="1" selection-end-line="1" />
+              <folding>
+                <element signature="e#120#153#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -119,10 +130,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="25" />
-    <option name="y" value="50" />
-    <option name="width" value="1540" />
-    <option name="height" value="905" />
+    <option name="x" value="72" />
+    <option name="y" value="128" />
+    <option name="width" value="1206" />
+    <option name="height" value="666" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -158,7 +169,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -310,14 +321,10 @@
       <workItem from="1559276954499" duration="2184000" />
       <workItem from="1559520621786" duration="541000" />
       <workItem from="1559573678525" duration="5643000" />
-      <workItem from="1559620836135" duration="3435000" />
-    </task>
-    <task id="LOCAL-00016" summary="1.async socket io logic and async file io logic modified">
-      <created>1551881906676</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1551881906676</updated>
+      <workItem from="1559620836135" duration="3703000" />
+      <workItem from="1559826886417" duration="31000" />
+      <workItem from="1559830827157" duration="103000" />
+      <workItem from="1559872600364" duration="5546000" />
     </task>
     <task id="LOCAL-00017" summary="1.async socket io logic and async file io logic modified">
       <created>1551881922468</created>
@@ -655,7 +662,14 @@
       <option name="project" value="LOCAL" />
       <updated>1558778835400</updated>
     </task>
-    <option name="localTasksCounter" value="65" />
+    <task id="LOCAL-00065" summary="1. 졸음운전 횟수 업데이트 하는 로직 추가&#10;2. 운전 횟수 업데이트 하는 로직추가">
+      <created>1559654675654</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1559654675654</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -691,7 +705,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="265818000" />
+    <option name="totallyTimeSpent" value="271766000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -703,15 +717,16 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4943609" visible="true" weight="0.19168901" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4943609" visible="true" weight="0.15625" />
       <window_info id="Structure" order="1" sideWeight="0.5056391" side_tool="true" weight="0.16487935" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Concurrent Activities Diagram" order="0" weight="0.32976654" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" weight="0.32843137" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" sideWeight="0.49661592" visible="true" weight="0.31728044" />
+      <window_info anchor="bottom" id="Run" order="3" sideWeight="0.49661592" visible="true" weight="0.2584746" />
       <window_info anchor="bottom" id="Debug" order="4" weight="0.388102" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
@@ -736,7 +751,6 @@
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.log" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="주석에 처리과정 추가했음 해당 로직으로 수정할것&#10;1. 클라이언트가 서버에게 데이터를 보냄&#10;2. 서버가 클라이언트에게 다시 데이터를 보냄" />
     <MESSAGE value="작동 쿼리들 추가할것" />
     <MESSAGE value="결과를 받아야 하는 로직과 결과를 받지 않아도 되는 로직 추가할것" />
     <MESSAGE value="데이터 처리 관계&#10;1. 요청 시작함을 알림&#10;2. 클라이언트로 부터 데이터를 받아옴 (+에러 처리)&#10;3. 클라이언트로 부터 받은 데이터를 요청 번호와 요청 데이터로 구분&#10;4. 데이터를 다시 전송함 (현재는 받은 데이터 그대로 전송 차후 수정)&#10;5. 요청을 완료함을 알림" />
@@ -761,7 +775,8 @@
     <MESSAGE value="테이블 업데이트 전용 함수 추가함." />
     <MESSAGE value="외부에서 접속 테스트를 위해 아이피 부분 로직 수정함." />
     <MESSAGE value="1. 사용자 정보를 처리하는 응답 추가함&#10;2. 사용자의 정보를 변경하는 응답 추가함" />
-    <option name="LAST_COMMIT_MESSAGE" value="1. 사용자 정보를 처리하는 응답 추가함&#10;2. 사용자의 정보를 변경하는 응답 추가함" />
+    <MESSAGE value="1. 졸음운전 횟수 업데이트 하는 로직 추가&#10;2. 운전 횟수 업데이트 하는 로직추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="1. 졸음운전 횟수 업데이트 하는 로직 추가&#10;2. 운전 횟수 업데이트 하는 로직추가" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -786,7 +801,7 @@
     <SUITE FILE_PATH="coverage/PyFileTransfer$pytest_in_unit_test_py.coverage" NAME="pytest in unit_test.py Coverage Results" MODIFIED="1558253968307" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
     <SUITE FILE_PATH="coverage/PyFileTransfer$async_server.coverage" NAME="async_server Coverage Results" MODIFIED="1554133160182" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
     <SUITE FILE_PATH="coverage/PyFileTransfer$test.coverage" NAME="test Coverage Results" MODIFIED="1558376977358" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
-    <SUITE FILE_PATH="coverage/PyFileTransfer$async_server_main.coverage" NAME="async_server_main Coverage Results" MODIFIED="1559620870470" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
+    <SUITE FILE_PATH="coverage/PyFileTransfer$async_server_main.coverage" NAME="async_server_main Coverage Results" MODIFIED="1559880176220" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
     <SUITE FILE_PATH="coverage/PyFileTransfer$encoding.coverage" NAME="encoding Coverage Results" MODIFIED="1554442656140" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
     <SUITE FILE_PATH="coverage/PyFileTransfer$test__1_.coverage" NAME="test (1) Coverage Results" MODIFIED="1559223887806" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/client" />
     <SUITE FILE_PATH="coverage/PyFileTransfer$request_handler.coverage" NAME="request_handler Coverage Results" MODIFIED="1554134647225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
@@ -951,13 +966,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/data_buffer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="26" selection-start-line="11" selection-start-column="26" selection-end-line="11" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/AppData/Local/Programs/Python/Python37/Lib/asyncio/streams.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="142">
@@ -1002,14 +1010,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/server/test.py" />
     <entry file="file://$PROJECT_DIR$/server/server.log">
-      <provider editor-type-id="LargeFileEditor">
-        <state relative-caret-position="245">
-          <caret line="11253" column="1" lean-forward="true" selection-start-line="11253" selection-start-column="1" selection-end-line="11253" selection-end-column="1" />
-        </state>
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="496" column="79" selection-start-line="496" selection-start-column="79" selection-end-line="496" selection-end-column="79" />
+        </state>
+      </provider>
+      <provider editor-type-id="LargeFileEditor">
+        <state relative-caret-position="245">
+          <caret line="11253" column="1" lean-forward="true" selection-start-line="11253" selection-start-column="1" selection-end-line="11253" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -1080,32 +1088,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/async_server_main.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="3" lean-forward="true" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-          <folding>
-            <element signature="e#120#153#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/request_handler.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="663" column="146" selection-start-line="663" selection-start-column="146" selection-end-line="663" selection-end-column="146" />
-          <folding>
-            <element signature="e#0#14#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/async_server.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="127">
           <caret line="103" selection-start-line="103" selection-end-line="103" />
           <folding>
             <element signature="e#130#144#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/data_buffer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/request_handler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="772">
+          <caret line="661" lean-forward="true" selection-start-line="661" selection-end-line="661" />
+          <folding>
+            <element signature="e#0#14#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/async_server_main.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <element signature="e#120#153#0" expanded="true" />
           </folding>
         </state>
       </provider>
