@@ -1,6 +1,5 @@
-PyFileTransfer
-=============
-
+CapstoneDesignServer
+============
 * Client image
 <img width="520" height="640" src="./images/mac_client.PNG">
 
