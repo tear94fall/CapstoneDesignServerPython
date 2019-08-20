@@ -69,6 +69,14 @@ class RequestHandler:
         elif request_number == 24:
             insert = UpdateAlcoholCount(self.data_buffer)
             result = await insert.main()
+            
+        elif request_number == 26:
+            insert = FindUserId(self.data_buffer)
+            result = await insert.main()
+
+        elif request_number == 28:
+            insert = FindUserPw(self.data_buffer)
+            result = await insert.main()
 
         return result
 
@@ -670,6 +678,104 @@ class UpdateAlcoholCount(RequestHandler):
                 else:
                     result = "false"
                     return result
+            except:
+                result = "false"
+                return result
+        except:
+            result = "false"
+            return result
+
+
+# 26번 요청
+# 사용자의 아이디를 찾아 반환함
+class FindUserId(RequestHandler):
+    def __init__(self, data_buffer: DataBuffer):
+        super().__init__(data_buffer)
+
+    async def main(self):
+        temp = self.data_buffer.get_data()
+
+        try:
+            username = None
+            usertel = None
+
+            temp = temp.replace("[", "", 1)
+            temp = temp.replace("]", "", 1)
+            temp = temp.replace(" ", "")
+            temp = temp.replace("'", "")
+            temp = temp.split(',')
+
+            for i in temp:
+                i = i.split('=')
+                if (i[0] == "username"):
+                    username = i[1]
+                if (i[0] == "usertel"):
+                    usertel = i[1]
+
+            get_all_userinfo_query = "SELECT * FROM MEMBER WHERE name=" + "'" + username + "'" + " AND tel=" + "'" + usertel + "'" + "; "
+
+            try:
+                qeury_result = await query_operator(get_all_userinfo_query)
+                qeury_result = qeury_result[0]
+
+                result = ""
+
+                # 보낸 이름과 전화번호가 저장된 이름과 전화번호화 일치하는지 점검
+                if username == str(qeury_result.get('name')) and usertel == str(qeury_result.get('tel')):
+                    result += str(qeury_result.get('id'))
+                else:
+                    result += "false"
+
+                return result
+            except:
+                result = "false"
+                return result
+        except:
+            result = "false"
+            return result
+
+
+# 28번 요청
+# 사용자의 비밀번호를 찾아 반환함
+class FindUserPw(RequestHandler):
+    def __init__(self, data_buffer: DataBuffer):
+        super().__init__(data_buffer)
+
+    async def main(self):
+        temp = self.data_buffer.get_data()
+
+        try:
+            userid = None
+            username = None
+
+            temp = temp.replace("[", "", 1)
+            temp = temp.replace("]", "", 1)
+            temp = temp.replace(" ", "")
+            temp = temp.replace("'", "")
+            temp = temp.split(',')
+
+            for i in temp:
+                i = i.split('=')
+                if (i[0] == "userid"):
+                    userid = i[1]
+                if (i[0] == "username"):
+                    username = i[1]
+
+            get_all_userinfo_query = "SELECT * FROM MEMBER WHERE name=" + "'" + username + "'" + " AND id=" + "'" + userid + "'" + "; "
+
+            try:
+                qeury_result = await query_operator(get_all_userinfo_query)
+                qeury_result = qeury_result[0]
+
+                result = ""
+
+                # 보낸 이름과 전화번호가 저장된 이름과 전화번호화 일치하는지 점검
+                if userid == str(qeury_result.get('id')) and username == str(qeury_result.get('name')):
+                    result += str(qeury_result.get('passwd'))
+                else:
+                    result += "false"
+
+                return result
             except:
                 result = "false"
                 return result
